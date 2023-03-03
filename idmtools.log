@@ -1,0 +1,529 @@
+2023-03-01 11:40:27,146.146 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (10240,47445649880128) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 11:40:31,785.785 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/exceptions.py:90 idmtools_error_handler [ERROR] (10240,47445649880128) - sequence item 0: expected str instance, int found
+NoneType: None
+2023-03-01 11:41:10,355.355 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (11441,47844622218304) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 11:41:10,681.681 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/exceptions.py:90 idmtools_error_handler [ERROR] (11441,47844622218304) - 'name'
+NoneType: None
+2023-03-01 11:42:58,334.334 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (12795,47251805246528) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 11:42:58,675.675 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/exceptions.py:90 idmtools_error_handler [ERROR] (12795,47251805246528) - Start and end years are not valid.
+NoneType: None
+2023-03-01 11:43:30,843.843 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (13739,47552763814976) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 11:44:49,597.597 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/exceptions.py:90 idmtools_error_handler [ERROR] (13739,47552763814976) - invalid syntax (<stdin>, line 1)
+NoneType: None
+2023-03-01 11:48:15,508.508 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (18231,47493165077568) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 11:48:15,909.909 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/exceptions.py:90 idmtools_error_handler [ERROR] (18231,47493165077568) - Start and end years are not valid.
+NoneType: None
+2023-03-01 11:48:50,529.529 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (18416,47431743222848) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 11:48:50,941.941 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/exceptions.py:90 idmtools_error_handler [ERROR] (18416,47431743222848) - Start and end years are not valid.
+NoneType: None
+2023-03-01 11:50:23,928.928 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (20214,47624198579264) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 11:50:24,634.634 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:415 display_config_block_details [VERBOSE] (20214,47624198579264) - 
+[COMPS]
+2023-03-01 11:50:24,635.635 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:416 display_config_block_details [VERBOSE] (20214,47624198579264) - {
+   "type": "COMPS",
+   "endpoint": "https://comps.idmod.org",
+   "environment": "Belegost",
+   "priority": "Normal",
+   "simulation_root": "$COMPS_PATH(USER)\\output",
+   "node_group": "emod_abcd",
+   "num_retries": "0",
+   "num_cores": "1",
+   "max_workers": "16",
+   "batch_size": "10",
+   "exclusive": "False"
+}
+2023-03-01 11:50:42,615.615 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools_platform_comps/comps_operations/workflow_item_operations.py:133 platform_run_item [INFO] (20214,47624198579264) - 
+The running WorkItem can be viewed at https://comps.idmod.org/#explore/WorkItems?filters=Id=7c58c194-59b8-ed11-aa02-b88303911bc1
+
+2023-03-01 12:01:49,111.111 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/exceptions.py:90 idmtools_error_handler [ERROR] (20214,47624198579264) - Cannot save file into a non-existent directory: 'simulation_inputs/climate/indie_test'
+NoneType: None
+2023-03-01 12:07:50,528.528 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (10719,47981861114944) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 12:07:51,047.47 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:415 display_config_block_details [VERBOSE] (10719,47981861114944) - 
+[COMPS]
+2023-03-01 12:07:51,047.47 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:416 display_config_block_details [VERBOSE] (10719,47981861114944) - {
+   "type": "COMPS",
+   "endpoint": "https://comps.idmod.org",
+   "environment": "Belegost",
+   "priority": "Normal",
+   "simulation_root": "$COMPS_PATH(USER)\\output",
+   "node_group": "emod_abcd",
+   "num_retries": "0",
+   "num_cores": "1",
+   "max_workers": "16",
+   "batch_size": "10",
+   "exclusive": "False"
+}
+2023-03-01 12:07:59,717.717 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools_platform_comps/comps_operations/workflow_item_operations.py:133 platform_run_item [INFO] (10719,47981861114944) - 
+The running WorkItem can be viewed at https://comps.idmod.org/#explore/WorkItems?filters=Id=0b9109ff-5bb8-ed11-aa02-b88303911bc1
+
+2023-03-01 12:37:01,339.339 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (19303,47874200097856) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 12:38:47,066.66 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (32543,47942564410432) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 12:39:43,086.86 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (7104,47634296017984) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 13:17:24,362.362 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (24814,46914890802240) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 13:24:05,973.973 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (32539,46940482483264) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 13:25:51,451.451 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (1429,47826692719680) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 13:32:22,313.313 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (8913,46957006496832) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 13:33:59,881.881 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (10193,47019574420544) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 13:34:09,346.346 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (11126,47777052984384) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 13:37:42,115.115 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (14139,47102079431744) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 13:52:18,197.197 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (31519,46922294760512) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 13:54:36,405.405 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (990,47164225741888) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 13:56:20,524.524 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (2945,47526859699264) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 13:58:26,567.567 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (5541,47638707455040) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 14:12:16,551.551 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (16385,47121951241280) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 14:12:24,734.734 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:204 _create_from_block [VERBOSE] (16385,47121951241280) - 
+[SLURM_LOCAL]
+2023-03-01 14:12:24,735.735 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:205 _create_from_block [VERBOSE] (16385,47121951241280) - {
+   "mode": "local",
+   "job_directory": "/projects/b1139/indie_emodpy"
+}
+2023-03-01 14:12:29,815.815 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/exceptions.py:90 idmtools_error_handler [ERROR] (16385,47121951241280) - Not found Experiment with id '4f04a18d-c070-4411-8c3b-716d5cde32a2'
+NoneType: None
+2023-03-01 14:14:48,669.669 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (22537,47881265394752) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 14:14:57,959.959 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:204 _create_from_block [VERBOSE] (22537,47881265394752) - 
+[SLURM_LOCAL]
+2023-03-01 14:14:57,960.960 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:205 _create_from_block [VERBOSE] (22537,47881265394752) - {
+   "mode": "local",
+   "job_directory": "/projects/b1139/indie_emodpy"
+}
+2023-03-01 14:15:04,685.685 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/exceptions.py:90 idmtools_error_handler [ERROR] (22537,47881265394752) - Not found Experiment with id '4f04a18d-c070-4411-8c3b-716d5cde32a2'
+NoneType: None
+2023-03-01 14:18:11,727.727 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (4466,47056922149952) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 14:18:20,310.310 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:204 _create_from_block [VERBOSE] (4466,47056922149952) - 
+[SLURM_LOCAL]
+2023-03-01 14:18:20,311.311 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:205 _create_from_block [VERBOSE] (4466,47056922149952) - {
+   "mode": "local",
+   "job_directory": "/projects/b1139/indie_emodpy/experiments"
+}
+2023-03-01 14:18:25,986.986 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:296 _print_configuration [VERBOSE] (4466,47056922149952) - Analyze Manager
+2023-03-01 14:18:25,987.987 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:297 _print_configuration [VERBOSE] (4466,47056922149952) -  | 1 item(s) selected for analysis
+2023-03-01 14:18:25,998.998 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:298 _print_configuration [VERBOSE] (4466,47056922149952) -  | partial_analyze_ok is True, max_items is None, and 0 item(s) are being ignored
+2023-03-01 14:18:25,998.998 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:300 _print_configuration [VERBOSE] (4466,47056922149952) -  | Analyzer(s): 
+2023-03-01 14:18:25,999.999 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:302 _print_configuration [VERBOSE] (4466,47056922149952) -  |  - InsetChartAnalyzer File parsing: on / Use cache: off
+2023-03-01 14:18:25,999.999 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:306 _print_configuration [VERBOSE] (4466,47056922149952) -  | Pool of 1 analyzing process(es)
+2023-03-01 14:18:26,138.138 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:382 _run_and_wait_for_reducing [ERROR] (4466,47056922149952) - Reduce for Analyzer InsetChartAnalyzer failed
+2023-03-01 14:18:26,139.139 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:383 _run_and_wait_for_reducing [ERROR] (4466,47056922149952) - [Errno 2] No such file or directory: '/projects/b1139/indie_emodpy/experiments/simulation_outputs/tmh6260_INDIE_2node_test'
+NoneType: None
+2023-03-01 14:18:26,140.140 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:384 _run_and_wait_for_reducing [ERROR] (4466,47056922149952) - See log for details
+2023-03-01 14:28:39,184.184 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (476,47204297344064) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 14:28:49,277.277 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:204 _create_from_block [VERBOSE] (476,47204297344064) - 
+[SLURM_LOCAL]
+2023-03-01 14:28:49,278.278 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:205 _create_from_block [VERBOSE] (476,47204297344064) - {
+   "mode": "local",
+   "job_directory": "/projects/b1139/indie_emodpy/experiments"
+}
+2023-03-01 14:28:55,518.518 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:296 _print_configuration [VERBOSE] (476,47204297344064) - Analyze Manager
+2023-03-01 14:28:55,519.519 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:297 _print_configuration [VERBOSE] (476,47204297344064) -  | 1 item(s) selected for analysis
+2023-03-01 14:28:55,520.520 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:298 _print_configuration [VERBOSE] (476,47204297344064) -  | partial_analyze_ok is True, max_items is None, and 0 item(s) are being ignored
+2023-03-01 14:28:55,520.520 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:300 _print_configuration [VERBOSE] (476,47204297344064) -  | Analyzer(s): 
+2023-03-01 14:28:55,520.520 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:302 _print_configuration [VERBOSE] (476,47204297344064) -  |  - InsetChartAnalyzer File parsing: on / Use cache: off
+2023-03-01 14:28:55,520.520 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:306 _print_configuration [VERBOSE] (476,47204297344064) -  | Pool of 1 analyzing process(es)
+2023-03-01 14:28:55,637.637 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:382 _run_and_wait_for_reducing [ERROR] (476,47204297344064) - Reduce for Analyzer InsetChartAnalyzer failed
+2023-03-01 14:28:55,701.701 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:383 _run_and_wait_for_reducing [ERROR] (476,47204297344064) - [Errno 2] No such file or directory: '/projects/b1139/indie_emodpy/experiments/simulation_outputs/tmh6260_INDIE_2node_test'
+NoneType: None
+2023-03-01 14:28:55,702.702 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:384 _run_and_wait_for_reducing [ERROR] (476,47204297344064) - See log for details
+2023-03-01 14:30:09,145.145 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (16614,47572752450624) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 14:30:10,125.125 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:204 _create_from_block [VERBOSE] (16614,47572752450624) - 
+[SLURM_LOCAL]
+2023-03-01 14:30:10,126.126 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:205 _create_from_block [VERBOSE] (16614,47572752450624) - {
+   "mode": "local",
+   "job_directory": "/projects/b1139/indie_emodpy/experiments"
+}
+2023-03-01 14:30:15,179.179 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/exceptions.py:90 idmtools_error_handler [ERROR] (16614,47572752450624) - name 'WeeklyPfPRAnalyzer' is not defined
+NoneType: None
+2023-03-01 14:30:49,823.823 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (7513,47213169960000) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 14:30:50,641.641 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:204 _create_from_block [VERBOSE] (7513,47213169960000) - 
+[SLURM_LOCAL]
+2023-03-01 14:30:50,641.641 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:205 _create_from_block [VERBOSE] (7513,47213169960000) - {
+   "mode": "local",
+   "job_directory": "/projects/b1139/indie_emodpy/experiments"
+}
+2023-03-01 14:30:55,553.553 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:296 _print_configuration [VERBOSE] (7513,47213169960000) - Analyze Manager
+2023-03-01 14:30:55,554.554 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:297 _print_configuration [VERBOSE] (7513,47213169960000) -  | 1 item(s) selected for analysis
+2023-03-01 14:30:55,555.555 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:298 _print_configuration [VERBOSE] (7513,47213169960000) -  | partial_analyze_ok is True, max_items is None, and 0 item(s) are being ignored
+2023-03-01 14:30:55,555.555 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:300 _print_configuration [VERBOSE] (7513,47213169960000) -  | Analyzer(s): 
+2023-03-01 14:30:55,555.555 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:302 _print_configuration [VERBOSE] (7513,47213169960000) -  |  - MonthlyPfPRAnalyzer File parsing: on / Use cache: off
+2023-03-01 14:30:55,555.555 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:306 _print_configuration [VERBOSE] (7513,47213169960000) -  | Pool of 1 analyzing process(es)
+2023-03-01 14:30:55,661.661 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:382 _run_and_wait_for_reducing [ERROR] (7513,47213169960000) - Reduce for Analyzer MonthlyPfPRAnalyzer failed
+2023-03-01 14:30:55,662.662 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:383 _run_and_wait_for_reducing [ERROR] (7513,47213169960000) - [Errno 2] No such file or directory: '/projects/b1139/indie_emodpy/experiments/simulation_otuputs/tmh6260_INDIE_2node_test'
+NoneType: None
+2023-03-01 14:30:55,662.662 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:384 _run_and_wait_for_reducing [ERROR] (7513,47213169960000) - See log for details
+2023-03-01 14:31:46,900.900 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (10346,47200515789888) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 14:31:47,729.729 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:204 _create_from_block [VERBOSE] (10346,47200515789888) - 
+[SLURM_LOCAL]
+2023-03-01 14:31:47,729.729 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:205 _create_from_block [VERBOSE] (10346,47200515789888) - {
+   "mode": "local",
+   "job_directory": "/projects/b1139/indie_emodpy/experiments"
+}
+2023-03-01 14:31:52,718.718 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:296 _print_configuration [VERBOSE] (10346,47200515789888) - Analyze Manager
+2023-03-01 14:31:52,719.719 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:297 _print_configuration [VERBOSE] (10346,47200515789888) -  | 1 item(s) selected for analysis
+2023-03-01 14:31:52,720.720 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:298 _print_configuration [VERBOSE] (10346,47200515789888) -  | partial_analyze_ok is True, max_items is None, and 0 item(s) are being ignored
+2023-03-01 14:31:52,720.720 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:300 _print_configuration [VERBOSE] (10346,47200515789888) -  | Analyzer(s): 
+2023-03-01 14:31:52,720.720 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:302 _print_configuration [VERBOSE] (10346,47200515789888) -  |  - MonthlyPfPRAnalyzer File parsing: on / Use cache: off
+2023-03-01 14:31:52,721.721 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:306 _print_configuration [VERBOSE] (10346,47200515789888) -  | Pool of 1 analyzing process(es)
+2023-03-01 14:31:52,808.808 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:382 _run_and_wait_for_reducing [ERROR] (10346,47200515789888) - Reduce for Analyzer MonthlyPfPRAnalyzer failed
+2023-03-01 14:31:52,809.809 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:383 _run_and_wait_for_reducing [ERROR] (10346,47200515789888) - [Errno 2] No such file or directory: '/projects/b1139/indie_emodpy/experiments/simulation_outputs/tmh6260_INDIE_2node_test'
+NoneType: None
+2023-03-01 14:31:52,810.810 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:384 _run_and_wait_for_reducing [ERROR] (10346,47200515789888) - See log for details
+2023-03-01 14:33:41,113.113 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (16264,47609786213440) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 14:33:42,119.119 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:204 _create_from_block [VERBOSE] (16264,47609786213440) - 
+[SLURM_LOCAL]
+2023-03-01 14:33:42,120.120 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:205 _create_from_block [VERBOSE] (16264,47609786213440) - {
+   "mode": "local",
+   "job_directory": "/projects/b1139/indie_emodpy/experiments"
+}
+2023-03-01 14:33:46,656.656 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:296 _print_configuration [VERBOSE] (16264,47609786213440) - Analyze Manager
+2023-03-01 14:33:46,657.657 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:297 _print_configuration [VERBOSE] (16264,47609786213440) -  | 1 item(s) selected for analysis
+2023-03-01 14:33:46,658.658 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:298 _print_configuration [VERBOSE] (16264,47609786213440) -  | partial_analyze_ok is True, max_items is None, and 0 item(s) are being ignored
+2023-03-01 14:33:46,658.658 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:300 _print_configuration [VERBOSE] (16264,47609786213440) -  | Analyzer(s): 
+2023-03-01 14:33:46,658.658 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:302 _print_configuration [VERBOSE] (16264,47609786213440) -  |  - MonthlyPfPRAnalyzer File parsing: on / Use cache: off
+2023-03-01 14:33:46,658.658 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:306 _print_configuration [VERBOSE] (16264,47609786213440) -  | Pool of 1 analyzing process(es)
+2023-03-01 14:33:46,803.803 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:488 analyze [SUCCESS] (16264,47609786213440) -  | Analysis complete. Took 0 seconds (~ 0.147 per item)
+2023-03-01 14:33:56,083.83 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (16339,47238560126016) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 14:33:56,933.933 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:204 _create_from_block [VERBOSE] (16339,47238560126016) - 
+[SLURM_LOCAL]
+2023-03-01 14:33:56,933.933 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:205 _create_from_block [VERBOSE] (16339,47238560126016) - {
+   "mode": "local",
+   "job_directory": "/projects/b1139/indie_emodpy/experiments"
+}
+2023-03-01 14:34:00,763.763 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:296 _print_configuration [VERBOSE] (16339,47238560126016) - Analyze Manager
+2023-03-01 14:34:00,764.764 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:297 _print_configuration [VERBOSE] (16339,47238560126016) -  | 1 item(s) selected for analysis
+2023-03-01 14:34:00,764.764 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:298 _print_configuration [VERBOSE] (16339,47238560126016) -  | partial_analyze_ok is True, max_items is None, and 0 item(s) are being ignored
+2023-03-01 14:34:00,765.765 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:300 _print_configuration [VERBOSE] (16339,47238560126016) -  | Analyzer(s): 
+2023-03-01 14:34:00,765.765 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:302 _print_configuration [VERBOSE] (16339,47238560126016) -  |  - InsetChartAnalyzer File parsing: on / Use cache: off
+2023-03-01 14:34:00,765.765 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:306 _print_configuration [VERBOSE] (16339,47238560126016) -  | Pool of 1 analyzing process(es)
+2023-03-01 14:34:00,868.868 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:488 analyze [SUCCESS] (16339,47238560126016) -  | Analysis complete. Took 0 seconds (~ 0.105 per item)
+2023-03-01 14:48:54,628.628 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (28492,47043965670464) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 14:51:44,433.433 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (5390,47229650256960) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 14:51:45,408.408 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:204 _create_from_block [VERBOSE] (5390,47229650256960) - 
+[SLURM_LOCAL]
+2023-03-01 14:51:45,408.408 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:205 _create_from_block [VERBOSE] (5390,47229650256960) - {
+   "mode": "local",
+   "job_directory": "/projects/b1139/indie_emodpy/experiments"
+}
+2023-03-01 14:51:50,056.56 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:296 _print_configuration [VERBOSE] (5390,47229650256960) - Analyze Manager
+2023-03-01 14:51:50,057.57 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:297 _print_configuration [VERBOSE] (5390,47229650256960) -  | 1 item(s) selected for analysis
+2023-03-01 14:51:50,058.58 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:298 _print_configuration [VERBOSE] (5390,47229650256960) -  | partial_analyze_ok is True, max_items is None, and 0 item(s) are being ignored
+2023-03-01 14:51:50,058.58 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:300 _print_configuration [VERBOSE] (5390,47229650256960) -  | Analyzer(s): 
+2023-03-01 14:51:50,058.58 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:302 _print_configuration [VERBOSE] (5390,47229650256960) -  |  - MonthlyPfPRAnalyzer File parsing: on / Use cache: off
+2023-03-01 14:51:50,059.59 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:306 _print_configuration [VERBOSE] (5390,47229650256960) -  | Pool of 1 analyzing process(es)
+2023-03-01 14:51:50,201.201 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:488 analyze [SUCCESS] (5390,47229650256960) -  | Analysis complete. Took 0 seconds (~ 0.145 per item)
+2023-03-01 14:51:58,742.742 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (5498,47190453253184) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 14:51:59,718.718 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:204 _create_from_block [VERBOSE] (5498,47190453253184) - 
+[SLURM_LOCAL]
+2023-03-01 14:51:59,718.718 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:205 _create_from_block [VERBOSE] (5498,47190453253184) - {
+   "mode": "local",
+   "job_directory": "/projects/b1139/indie_emodpy/experiments"
+}
+2023-03-01 14:52:04,628.628 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:296 _print_configuration [VERBOSE] (5498,47190453253184) - Analyze Manager
+2023-03-01 14:52:04,629.629 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:297 _print_configuration [VERBOSE] (5498,47190453253184) -  | 1 item(s) selected for analysis
+2023-03-01 14:52:04,630.630 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:298 _print_configuration [VERBOSE] (5498,47190453253184) -  | partial_analyze_ok is True, max_items is None, and 0 item(s) are being ignored
+2023-03-01 14:52:04,630.630 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:300 _print_configuration [VERBOSE] (5498,47190453253184) -  | Analyzer(s): 
+2023-03-01 14:52:04,630.630 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:302 _print_configuration [VERBOSE] (5498,47190453253184) -  |  - InsetChartAnalyzer File parsing: on / Use cache: off
+2023-03-01 14:52:04,630.630 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:306 _print_configuration [VERBOSE] (5498,47190453253184) -  | Pool of 1 analyzing process(es)
+2023-03-01 14:52:04,768.768 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:488 analyze [SUCCESS] (5498,47190453253184) -  | Analysis complete. Took 0 seconds (~ 0.140 per item)
+2023-03-01 14:55:39,059.59 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (17850,47583078995008) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 14:57:49,045.45 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (23886,47246988190784) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 14:57:49,892.892 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:204 _create_from_block [VERBOSE] (23886,47246988190784) - 
+[SLURM_LOCAL]
+2023-03-01 14:57:49,892.892 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:205 _create_from_block [VERBOSE] (23886,47246988190784) - {
+   "mode": "local",
+   "job_directory": "/projects/b1139/indie_emodpy/experiments"
+}
+2023-03-01 14:57:54,713.713 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:296 _print_configuration [VERBOSE] (23886,47246988190784) - Analyze Manager
+2023-03-01 14:57:54,713.713 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:297 _print_configuration [VERBOSE] (23886,47246988190784) -  | 1 item(s) selected for analysis
+2023-03-01 14:57:54,714.714 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:298 _print_configuration [VERBOSE] (23886,47246988190784) -  | partial_analyze_ok is True, max_items is None, and 0 item(s) are being ignored
+2023-03-01 14:57:54,714.714 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:300 _print_configuration [VERBOSE] (23886,47246988190784) -  | Analyzer(s): 
+2023-03-01 14:57:54,714.714 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:302 _print_configuration [VERBOSE] (23886,47246988190784) -  |  - InsetChartAnalyzer File parsing: on / Use cache: off
+2023-03-01 14:57:54,715.715 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:306 _print_configuration [VERBOSE] (23886,47246988190784) -  | Pool of 1 analyzing process(es)
+2023-03-01 14:57:54,852.852 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:488 analyze [SUCCESS] (23886,47246988190784) -  | Analysis complete. Took 0 seconds (~ 0.139 per item)
+2023-03-01 14:58:00,915.915 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (24007,47236328621120) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 14:58:01,867.867 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:204 _create_from_block [VERBOSE] (24007,47236328621120) - 
+[SLURM_LOCAL]
+2023-03-01 14:58:01,868.868 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:205 _create_from_block [VERBOSE] (24007,47236328621120) - {
+   "mode": "local",
+   "job_directory": "/projects/b1139/indie_emodpy/experiments"
+}
+2023-03-01 14:58:06,300.300 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:296 _print_configuration [VERBOSE] (24007,47236328621120) - Analyze Manager
+2023-03-01 14:58:06,301.301 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:297 _print_configuration [VERBOSE] (24007,47236328621120) -  | 1 item(s) selected for analysis
+2023-03-01 14:58:06,301.301 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:298 _print_configuration [VERBOSE] (24007,47236328621120) -  | partial_analyze_ok is True, max_items is None, and 0 item(s) are being ignored
+2023-03-01 14:58:06,301.301 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:300 _print_configuration [VERBOSE] (24007,47236328621120) -  | Analyzer(s): 
+2023-03-01 14:58:06,302.302 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:302 _print_configuration [VERBOSE] (24007,47236328621120) -  |  - MonthlyPfPRAnalyzer File parsing: on / Use cache: off
+2023-03-01 14:58:06,302.302 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:306 _print_configuration [VERBOSE] (24007,47236328621120) -  | Pool of 1 analyzing process(es)
+2023-03-01 14:58:06,403.403 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:488 analyze [SUCCESS] (24007,47236328621120) -  | Analysis complete. Took 0 seconds (~ 0.103 per item)
+2023-03-01 15:00:34,464.464 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (30658,47980294026304) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 15:21:00,069.69 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (19668,47119253759040) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 15:21:01,167.167 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:204 _create_from_block [VERBOSE] (19668,47119253759040) - 
+[SLURM_LOCAL]
+2023-03-01 15:21:01,167.167 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:205 _create_from_block [VERBOSE] (19668,47119253759040) - {
+   "mode": "local",
+   "job_directory": "/projects/b1139/indie_emodpy/experiments"
+}
+2023-03-01 15:21:08,395.395 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:296 _print_configuration [VERBOSE] (19668,47119253759040) - Analyze Manager
+2023-03-01 15:21:08,396.396 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:297 _print_configuration [VERBOSE] (19668,47119253759040) -  | 1 item(s) selected for analysis
+2023-03-01 15:21:08,397.397 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:298 _print_configuration [VERBOSE] (19668,47119253759040) -  | partial_analyze_ok is True, max_items is None, and 0 item(s) are being ignored
+2023-03-01 15:21:08,397.397 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:300 _print_configuration [VERBOSE] (19668,47119253759040) -  | Analyzer(s): 
+2023-03-01 15:21:08,397.397 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:302 _print_configuration [VERBOSE] (19668,47119253759040) -  |  - MonthlyPfPRAnalyzer File parsing: on / Use cache: off
+2023-03-01 15:21:08,398.398 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:306 _print_configuration [VERBOSE] (19668,47119253759040) -  | Pool of 1 analyzing process(es)
+2023-03-01 15:21:08,540.540 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:488 analyze [SUCCESS] (19668,47119253759040) -  | Analysis complete. Took 0 seconds (~ 0.146 per item)
+2023-03-01 15:21:11,680.680 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (20219,47035357258816) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 15:21:12,522.522 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:204 _create_from_block [VERBOSE] (20219,47035357258816) - 
+[SLURM_LOCAL]
+2023-03-01 15:21:12,522.522 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:205 _create_from_block [VERBOSE] (20219,47035357258816) - {
+   "mode": "local",
+   "job_directory": "/projects/b1139/indie_emodpy/experiments"
+}
+2023-03-01 15:21:16,421.421 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:296 _print_configuration [VERBOSE] (20219,47035357258816) - Analyze Manager
+2023-03-01 15:21:16,423.423 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:297 _print_configuration [VERBOSE] (20219,47035357258816) -  | 1 item(s) selected for analysis
+2023-03-01 15:21:16,424.424 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:298 _print_configuration [VERBOSE] (20219,47035357258816) -  | partial_analyze_ok is True, max_items is None, and 0 item(s) are being ignored
+2023-03-01 15:21:16,424.424 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:300 _print_configuration [VERBOSE] (20219,47035357258816) -  | Analyzer(s): 
+2023-03-01 15:21:16,424.424 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:302 _print_configuration [VERBOSE] (20219,47035357258816) -  |  - InsetChartAnalyzer File parsing: on / Use cache: off
+2023-03-01 15:21:16,425.425 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:306 _print_configuration [VERBOSE] (20219,47035357258816) -  | Pool of 1 analyzing process(es)
+2023-03-01 15:21:17,023.23 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:488 analyze [SUCCESS] (20219,47035357258816) -  | Analysis complete. Took 0 seconds (~ 0.603 per item)
+2023-03-01 15:30:27,408.408 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (31200,47359807804480) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 15:30:29,268.268 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:204 _create_from_block [VERBOSE] (31200,47359807804480) - 
+[SLURM_LOCAL]
+2023-03-01 15:30:29,269.269 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:205 _create_from_block [VERBOSE] (31200,47359807804480) - {
+   "mode": "local",
+   "job_directory": "/projects/b1139/indie_emodpy/experiments"
+}
+2023-03-01 15:30:32,922.922 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:296 _print_configuration [VERBOSE] (31200,47359807804480) - Analyze Manager
+2023-03-01 15:30:32,922.922 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:297 _print_configuration [VERBOSE] (31200,47359807804480) -  | 1 item(s) selected for analysis
+2023-03-01 15:30:32,922.922 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:298 _print_configuration [VERBOSE] (31200,47359807804480) -  | partial_analyze_ok is True, max_items is None, and 0 item(s) are being ignored
+2023-03-01 15:30:32,923.923 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:300 _print_configuration [VERBOSE] (31200,47359807804480) -  | Analyzer(s): 
+2023-03-01 15:30:32,923.923 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:302 _print_configuration [VERBOSE] (31200,47359807804480) -  |  - InsetChartAnalyzer File parsing: on / Use cache: off
+2023-03-01 15:30:32,924.924 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:306 _print_configuration [VERBOSE] (31200,47359807804480) -  | Pool of 1 analyzing process(es)
+2023-03-01 15:30:33,913.913 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:488 analyze [SUCCESS] (31200,47359807804480) -  | Analysis complete. Took 0 seconds (~ 0.991 per item)
+2023-03-01 15:32:07,571.571 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (589,47204524434496) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 15:32:08,394.394 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:204 _create_from_block [VERBOSE] (589,47204524434496) - 
+[SLURM_LOCAL]
+2023-03-01 15:32:08,394.394 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:205 _create_from_block [VERBOSE] (589,47204524434496) - {
+   "mode": "local",
+   "job_directory": "/projects/b1139/indie_emodpy/experiments"
+}
+2023-03-01 15:32:12,328.328 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:296 _print_configuration [VERBOSE] (589,47204524434496) - Analyze Manager
+2023-03-01 15:32:12,329.329 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:297 _print_configuration [VERBOSE] (589,47204524434496) -  | 1 item(s) selected for analysis
+2023-03-01 15:32:12,329.329 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:298 _print_configuration [VERBOSE] (589,47204524434496) -  | partial_analyze_ok is True, max_items is None, and 0 item(s) are being ignored
+2023-03-01 15:32:12,330.330 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:300 _print_configuration [VERBOSE] (589,47204524434496) -  | Analyzer(s): 
+2023-03-01 15:32:12,330.330 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:302 _print_configuration [VERBOSE] (589,47204524434496) -  |  - InsetChartAnalyzer File parsing: on / Use cache: off
+2023-03-01 15:32:12,330.330 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:306 _print_configuration [VERBOSE] (589,47204524434496) -  | Pool of 1 analyzing process(es)
+2023-03-01 15:32:12,541.541 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/map_worker_entry.py:101 _get_mapped_data_for_item [ERROR] (747,47204524434496) - year 0 is out of range
+2023-03-01 15:32:12,623.623 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:338 _run_and_wait_for_mapping [ERROR] (589,47204524434496) - year 0 is out of range
+2023-03-01 15:32:12,625.625 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/exceptions.py:90 idmtools_error_handler [ERROR] (589,47204524434496) - year 0 is out of range
+NoneType: None
+2023-03-01 15:33:34,115.115 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (1837,46962483237952) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 15:33:34,941.941 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:204 _create_from_block [VERBOSE] (1837,46962483237952) - 
+[SLURM_LOCAL]
+2023-03-01 15:33:34,941.941 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:205 _create_from_block [VERBOSE] (1837,46962483237952) - {
+   "mode": "local",
+   "job_directory": "/projects/b1139/indie_emodpy/experiments"
+}
+2023-03-01 15:33:42,180.180 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:296 _print_configuration [VERBOSE] (1837,46962483237952) - Analyze Manager
+2023-03-01 15:33:42,181.181 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:297 _print_configuration [VERBOSE] (1837,46962483237952) -  | 1 item(s) selected for analysis
+2023-03-01 15:33:42,181.181 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:298 _print_configuration [VERBOSE] (1837,46962483237952) -  | partial_analyze_ok is True, max_items is None, and 0 item(s) are being ignored
+2023-03-01 15:33:42,182.182 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:300 _print_configuration [VERBOSE] (1837,46962483237952) -  | Analyzer(s): 
+2023-03-01 15:33:42,182.182 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:302 _print_configuration [VERBOSE] (1837,46962483237952) -  |  - InsetChartAnalyzer File parsing: on / Use cache: off
+2023-03-01 15:33:42,182.182 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:306 _print_configuration [VERBOSE] (1837,46962483237952) -  | Pool of 1 analyzing process(es)
+2023-03-01 15:33:42,747.747 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:488 analyze [SUCCESS] (1837,46962483237952) -  | Analysis complete. Took 0 seconds (~ 0.567 per item)
+2023-03-01 15:35:05,378.378 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (3931,47464680354880) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 15:35:06,593.593 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:204 _create_from_block [VERBOSE] (3931,47464680354880) - 
+[SLURM_LOCAL]
+2023-03-01 15:35:06,593.593 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:205 _create_from_block [VERBOSE] (3931,47464680354880) - {
+   "mode": "local",
+   "job_directory": "/projects/b1139/indie_emodpy/experiments"
+}
+2023-03-01 15:35:11,222.222 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:296 _print_configuration [VERBOSE] (3931,47464680354880) - Analyze Manager
+2023-03-01 15:35:11,223.223 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:297 _print_configuration [VERBOSE] (3931,47464680354880) -  | 1 item(s) selected for analysis
+2023-03-01 15:35:11,223.223 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:298 _print_configuration [VERBOSE] (3931,47464680354880) -  | partial_analyze_ok is True, max_items is None, and 0 item(s) are being ignored
+2023-03-01 15:35:11,224.224 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:300 _print_configuration [VERBOSE] (3931,47464680354880) -  | Analyzer(s): 
+2023-03-01 15:35:11,224.224 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:302 _print_configuration [VERBOSE] (3931,47464680354880) -  |  - InsetChartAnalyzer File parsing: on / Use cache: off
+2023-03-01 15:35:11,224.224 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:306 _print_configuration [VERBOSE] (3931,47464680354880) -  | Pool of 1 analyzing process(es)
+2023-03-01 15:35:11,792.792 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:488 analyze [SUCCESS] (3931,47464680354880) -  | Analysis complete. Took 0 seconds (~ 0.570 per item)
+2023-03-01 15:39:16,578.578 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (7956,47165129495616) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 15:39:17,609.609 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:204 _create_from_block [VERBOSE] (7956,47165129495616) - 
+[SLURM_LOCAL]
+2023-03-01 15:39:17,610.610 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:205 _create_from_block [VERBOSE] (7956,47165129495616) - {
+   "mode": "local",
+   "job_directory": "/projects/b1139/indie_emodpy/experiments"
+}
+2023-03-01 15:39:21,367.367 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:296 _print_configuration [VERBOSE] (7956,47165129495616) - Analyze Manager
+2023-03-01 15:39:21,367.367 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:297 _print_configuration [VERBOSE] (7956,47165129495616) -  | 1 item(s) selected for analysis
+2023-03-01 15:39:21,368.368 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:298 _print_configuration [VERBOSE] (7956,47165129495616) -  | partial_analyze_ok is True, max_items is None, and 0 item(s) are being ignored
+2023-03-01 15:39:21,368.368 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:300 _print_configuration [VERBOSE] (7956,47165129495616) -  | Analyzer(s): 
+2023-03-01 15:39:21,368.368 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:302 _print_configuration [VERBOSE] (7956,47165129495616) -  |  - MonthlyPfPRAnalyzer File parsing: on / Use cache: off
+2023-03-01 15:39:21,369.369 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:306 _print_configuration [VERBOSE] (7956,47165129495616) -  | Pool of 1 analyzing process(es)
+2023-03-01 15:39:21,504.504 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:488 analyze [SUCCESS] (7956,47165129495616) -  | Analysis complete. Took 0 seconds (~ 0.138 per item)
+2023-03-01 15:52:09,509.509 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (22062,47715470881856) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 16:11:45,917.917 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (31384,47484014359616) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 16:11:47,432.432 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:204 _create_from_block [VERBOSE] (31384,47484014359616) - 
+[SLURM_LOCAL]
+2023-03-01 16:11:47,432.432 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:205 _create_from_block [VERBOSE] (31384,47484014359616) - {
+   "mode": "local",
+   "job_directory": "/projects/b1139/indie_emodpy/experiments"
+}
+2023-03-01 16:11:51,516.516 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:296 _print_configuration [VERBOSE] (31384,47484014359616) - Analyze Manager
+2023-03-01 16:11:51,517.517 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:297 _print_configuration [VERBOSE] (31384,47484014359616) -  | 1 item(s) selected for analysis
+2023-03-01 16:11:51,518.518 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:298 _print_configuration [VERBOSE] (31384,47484014359616) -  | partial_analyze_ok is True, max_items is None, and 0 item(s) are being ignored
+2023-03-01 16:11:51,518.518 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:300 _print_configuration [VERBOSE] (31384,47484014359616) -  | Analyzer(s): 
+2023-03-01 16:11:51,519.519 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:302 _print_configuration [VERBOSE] (31384,47484014359616) -  |  - MonthlyPfPRAnalyzer File parsing: on / Use cache: off
+2023-03-01 16:11:51,519.519 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:306 _print_configuration [VERBOSE] (31384,47484014359616) -  | Pool of 1 analyzing process(es)
+2023-03-01 16:11:51,663.663 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:488 analyze [SUCCESS] (31384,47484014359616) -  | Analysis complete. Took 0 seconds (~ 0.147 per item)
+2023-03-01 16:13:30,411.411 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (4994,47122664715328) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-01 16:13:31,432.432 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:204 _create_from_block [VERBOSE] (4994,47122664715328) - 
+[SLURM_LOCAL]
+2023-03-01 16:13:31,433.433 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:205 _create_from_block [VERBOSE] (4994,47122664715328) - {
+   "mode": "local",
+   "job_directory": "/projects/b1139/indie_emodpy/experiments"
+}
+2023-03-01 16:13:35,952.952 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:296 _print_configuration [VERBOSE] (4994,47122664715328) - Analyze Manager
+2023-03-01 16:13:35,954.954 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:297 _print_configuration [VERBOSE] (4994,47122664715328) -  | 1 item(s) selected for analysis
+2023-03-01 16:13:35,954.954 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:298 _print_configuration [VERBOSE] (4994,47122664715328) -  | partial_analyze_ok is True, max_items is None, and 0 item(s) are being ignored
+2023-03-01 16:13:35,954.954 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:300 _print_configuration [VERBOSE] (4994,47122664715328) -  | Analyzer(s): 
+2023-03-01 16:13:35,955.955 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:302 _print_configuration [VERBOSE] (4994,47122664715328) -  |  - InsetChartAnalyzer File parsing: on / Use cache: off
+2023-03-01 16:13:35,955.955 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:306 _print_configuration [VERBOSE] (4994,47122664715328) -  | Pool of 1 analyzing process(es)
+2023-03-01 16:13:36,573.573 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:488 analyze [SUCCESS] (4994,47122664715328) -  | Analysis complete. Took 0 seconds (~ 0.621 per item)
+2023-03-02 10:59:35,074.74 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (139497,47587260585024) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-02 11:12:22,399.399 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (277537,47598958924864) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-02 11:12:25,776.776 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:204 _create_from_block [VERBOSE] (277537,47598958924864) - 
+[SLURM_LOCAL]
+2023-03-02 11:12:25,777.777 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:205 _create_from_block [VERBOSE] (277537,47598958924864) - {
+   "mode": "local",
+   "job_directory": "/projects/b1139/indie_emodpy/experiments"
+}
+2023-03-02 11:12:32,612.612 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:296 _print_configuration [VERBOSE] (277537,47598958924864) - Analyze Manager
+2023-03-02 11:12:32,612.612 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:297 _print_configuration [VERBOSE] (277537,47598958924864) -  | 5 item(s) selected for analysis
+2023-03-02 11:12:32,612.612 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:298 _print_configuration [VERBOSE] (277537,47598958924864) -  | partial_analyze_ok is True, max_items is None, and 0 item(s) are being ignored
+2023-03-02 11:12:32,613.613 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:300 _print_configuration [VERBOSE] (277537,47598958924864) -  | Analyzer(s): 
+2023-03-02 11:12:32,613.613 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:302 _print_configuration [VERBOSE] (277537,47598958924864) -  |  - InsetChartAnalyzer File parsing: on / Use cache: off
+2023-03-02 11:12:32,613.613 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:306 _print_configuration [VERBOSE] (277537,47598958924864) -  | Pool of 5 analyzing process(es)
+2023-03-02 11:12:33,157.157 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:488 analyze [SUCCESS] (277537,47598958924864) -  | Analysis complete. Took 0 seconds (~ 0.109 per item)
+2023-03-02 11:12:43,553.553 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (278150,47610987205696) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-02 11:12:44,270.270 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:204 _create_from_block [VERBOSE] (278150,47610987205696) - 
+[SLURM_LOCAL]
+2023-03-02 11:12:44,270.270 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:205 _create_from_block [VERBOSE] (278150,47610987205696) - {
+   "mode": "local",
+   "job_directory": "/projects/b1139/indie_emodpy/experiments"
+}
+2023-03-02 11:12:50,265.265 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:296 _print_configuration [VERBOSE] (278150,47610987205696) - Analyze Manager
+2023-03-02 11:12:50,265.265 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:297 _print_configuration [VERBOSE] (278150,47610987205696) -  | 5 item(s) selected for analysis
+2023-03-02 11:12:50,265.265 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:298 _print_configuration [VERBOSE] (278150,47610987205696) -  | partial_analyze_ok is True, max_items is None, and 0 item(s) are being ignored
+2023-03-02 11:12:50,265.265 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:300 _print_configuration [VERBOSE] (278150,47610987205696) -  | Analyzer(s): 
+2023-03-02 11:12:50,266.266 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:302 _print_configuration [VERBOSE] (278150,47610987205696) -  |  - MonthlyPfPRAnalyzer File parsing: on / Use cache: off
+2023-03-02 11:12:50,266.266 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:306 _print_configuration [VERBOSE] (278150,47610987205696) -  | Pool of 5 analyzing process(es)
+2023-03-02 11:12:50,383.383 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:488 analyze [SUCCESS] (278150,47610987205696) -  | Analysis complete. Took 0 seconds (~ 0.024 per item)
+2023-03-02 11:57:59,934.934 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (266500,47510528681024) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-02 11:58:39,988.988 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (269667,47216918303808) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-02 12:00:53,359.359 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (34176,47636966978624) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-03 10:03:02,104.104 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (7921,47430602794048) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-03 10:04:07,275.275 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (8235,46942988813376) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-03 10:07:11,948.948 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (9030,47409597412416) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-03 11:22:58,432.432 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (85603,47650363331648) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-03 11:27:04,653.653 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (95984,47462525834304) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-03 11:29:32,142.142 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (99066,47882387375168) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-03 11:32:17,153.153 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (110907,46930087666752) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-03 11:32:52,010.10 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (111768,46927153943616) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-03 11:35:30,456.456 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (113615,47852320101440) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-03 11:38:39,642.642 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (131127,47411187618880) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-03 11:48:08,661.661 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (154952,47942456714304) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-03 11:51:50,192.192 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (167199,47580668994624) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-03 11:53:40,128.128 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (168709,47128291951680) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-03 12:12:33,049.49 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (189855,47546657457216) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-03 13:00:29,049.49 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (234412,47365167281216) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-03 13:02:39,535.535 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (236809,47357785355328) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-03 14:32:12,756.756 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (131515,47147596641344) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-03 14:32:23,441.441 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:204 _create_from_block [VERBOSE] (131515,47147596641344) - 
+[SLURM_LOCAL]
+2023-03-03 14:32:23,441.441 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:205 _create_from_block [VERBOSE] (131515,47147596641344) - {
+   "mode": "local",
+   "job_directory": "/projects/b1139/indie_emodpy/experiments"
+}
+2023-03-03 14:32:41,349.349 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:296 _print_configuration [VERBOSE] (131515,47147596641344) - Analyze Manager
+2023-03-03 14:32:41,349.349 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:297 _print_configuration [VERBOSE] (131515,47147596641344) -  | 300 item(s) selected for analysis
+2023-03-03 14:32:41,349.349 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:298 _print_configuration [VERBOSE] (131515,47147596641344) -  | partial_analyze_ok is True, max_items is None, and 0 item(s) are being ignored
+2023-03-03 14:32:41,350.350 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:300 _print_configuration [VERBOSE] (131515,47147596641344) -  | Analyzer(s): 
+2023-03-03 14:32:41,350.350 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:302 _print_configuration [VERBOSE] (131515,47147596641344) -  |  - InsetChartAnalyzer File parsing: on / Use cache: off
+2023-03-03 14:32:41,350.350 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:306 _print_configuration [VERBOSE] (131515,47147596641344) -  | Pool of 52 analyzing process(es)
+2023-03-03 14:32:53,309.309 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:488 analyze [SUCCESS] (131515,47147596641344) -  | Analysis complete. Took 11.96 seconds (~ 0.040 per item)
+2023-03-03 14:33:07,833.833 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (133393,47085855638592) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-03 14:33:08,509.509 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:204 _create_from_block [VERBOSE] (133393,47085855638592) - 
+[SLURM_LOCAL]
+2023-03-03 14:33:08,509.509 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:205 _create_from_block [VERBOSE] (133393,47085855638592) - {
+   "mode": "local",
+   "job_directory": "/projects/b1139/indie_emodpy/experiments"
+}
+2023-03-03 14:33:09,664.664 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/exceptions.py:90 idmtools_error_handler [ERROR] (133393,47085855638592) - 
+NoneType: None
+2023-03-03 14:33:34,001.1 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (134241,47081491780672) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-03 14:33:34,603.603 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:204 _create_from_block [VERBOSE] (134241,47081491780672) - 
+[SLURM_LOCAL]
+2023-03-03 14:33:34,604.604 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:205 _create_from_block [VERBOSE] (134241,47081491780672) - {
+   "mode": "local",
+   "job_directory": "/projects/b1139/indie_emodpy/experiments"
+}
+2023-03-03 14:33:44,022.22 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:296 _print_configuration [VERBOSE] (134241,47081491780672) - Analyze Manager
+2023-03-03 14:33:44,024.24 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:297 _print_configuration [VERBOSE] (134241,47081491780672) -  | 300 item(s) selected for analysis
+2023-03-03 14:33:44,024.24 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:298 _print_configuration [VERBOSE] (134241,47081491780672) -  | partial_analyze_ok is True, max_items is None, and 0 item(s) are being ignored
+2023-03-03 14:33:44,025.25 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:300 _print_configuration [VERBOSE] (134241,47081491780672) -  | Analyzer(s): 
+2023-03-03 14:33:44,025.25 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:302 _print_configuration [VERBOSE] (134241,47081491780672) -  |  - MonthlyPfPRAnalyzer File parsing: on / Use cache: off
+2023-03-03 14:33:44,026.26 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:306 _print_configuration [VERBOSE] (134241,47081491780672) -  | Pool of 52 analyzing process(es)
+2023-03-03 14:33:46,045.45 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:488 analyze [SUCCESS] (134241,47081491780672) -  | Analysis complete. Took 2.02 seconds (~ 0.007 per item)
+2023-03-03 14:44:35,120.120 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (150417,47624797209664) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-03 14:55:15,594.594 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (168614,47951137739840) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-03 15:30:26,076.76 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (2324,47175004230720) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-03 15:30:40,346.346 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:204 _create_from_block [VERBOSE] (2324,47175004230720) - 
+[SLURM_LOCAL]
+2023-03-03 15:30:40,346.346 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:205 _create_from_block [VERBOSE] (2324,47175004230720) - {
+   "mode": "local",
+   "job_directory": "/projects/b1139/indie_emodpy/experiments"
+}
+2023-03-03 15:31:05,846.846 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:296 _print_configuration [VERBOSE] (2324,47175004230720) - Analyze Manager
+2023-03-03 15:31:05,846.846 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:297 _print_configuration [VERBOSE] (2324,47175004230720) -  | 600 item(s) selected for analysis
+2023-03-03 15:31:05,846.846 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:298 _print_configuration [VERBOSE] (2324,47175004230720) -  | partial_analyze_ok is True, max_items is None, and 0 item(s) are being ignored
+2023-03-03 15:31:05,850.850 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:300 _print_configuration [VERBOSE] (2324,47175004230720) -  | Analyzer(s): 
+2023-03-03 15:31:05,850.850 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:302 _print_configuration [VERBOSE] (2324,47175004230720) -  |  - InsetChartAnalyzer File parsing: on / Use cache: off
+2023-03-03 15:31:05,851.851 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:306 _print_configuration [VERBOSE] (2324,47175004230720) -  | Pool of 28 analyzing process(es)
+2023-03-03 15:31:36,687.687 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:488 analyze [SUCCESS] (2324,47175004230720) -  | Analysis complete. Took 30.84 seconds (~ 0.051 per item)
+2023-03-03 15:32:41,750.750 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (4347,47354729546816) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-03 15:32:42,557.557 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:204 _create_from_block [VERBOSE] (4347,47354729546816) - 
+[SLURM_LOCAL]
+2023-03-03 15:32:42,558.558 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:205 _create_from_block [VERBOSE] (4347,47354729546816) - {
+   "mode": "local",
+   "job_directory": "/projects/b1139/indie_emodpy/experiments"
+}
+2023-03-03 15:32:49,155.155 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:296 _print_configuration [VERBOSE] (4347,47354729546816) - Analyze Manager
+2023-03-03 15:32:49,155.155 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:297 _print_configuration [VERBOSE] (4347,47354729546816) -  | 600 item(s) selected for analysis
+2023-03-03 15:32:49,156.156 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:298 _print_configuration [VERBOSE] (4347,47354729546816) -  | partial_analyze_ok is True, max_items is None, and 0 item(s) are being ignored
+2023-03-03 15:32:49,156.156 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:300 _print_configuration [VERBOSE] (4347,47354729546816) -  | Analyzer(s): 
+2023-03-03 15:32:49,156.156 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:302 _print_configuration [VERBOSE] (4347,47354729546816) -  |  - MonthlyPfPRAnalyzer File parsing: on / Use cache: off
+2023-03-03 15:32:49,156.156 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:306 _print_configuration [VERBOSE] (4347,47354729546816) -  | Pool of 28 analyzing process(es)
+2023-03-03 15:32:57,362.362 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:488 analyze [SUCCESS] (4347,47354729546816) -  | Analysis complete. Took 8.21 seconds (~ 0.014 per item)
+2023-03-03 15:43:13,041.41 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (14886,47543834145856) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-03 15:45:15,891.891 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (20531,47042273125440) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-03 15:59:08,572.572 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (27954,47379025466432) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-03 15:59:10,286.286 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:204 _create_from_block [VERBOSE] (27954,47379025466432) - 
+[SLURM_LOCAL]
+2023-03-03 15:59:10,287.287 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:205 _create_from_block [VERBOSE] (27954,47379025466432) - {
+   "mode": "local",
+   "job_directory": "/projects/b1139/indie_emodpy/experiments"
+}
+2023-03-03 15:59:16,373.373 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:296 _print_configuration [VERBOSE] (27954,47379025466432) - Analyze Manager
+2023-03-03 15:59:16,373.373 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:297 _print_configuration [VERBOSE] (27954,47379025466432) -  | 300 item(s) selected for analysis
+2023-03-03 15:59:16,374.374 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:298 _print_configuration [VERBOSE] (27954,47379025466432) -  | partial_analyze_ok is True, max_items is None, and 0 item(s) are being ignored
+2023-03-03 15:59:16,374.374 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:300 _print_configuration [VERBOSE] (27954,47379025466432) -  | Analyzer(s): 
+2023-03-03 15:59:16,374.374 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:302 _print_configuration [VERBOSE] (27954,47379025466432) -  |  - InsetChartAnalyzer File parsing: on / Use cache: off
+2023-03-03 15:59:16,374.374 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:306 _print_configuration [VERBOSE] (27954,47379025466432) -  | Pool of 28 analyzing process(es)
+2023-03-03 15:59:33,435.435 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:488 analyze [SUCCESS] (27954,47379025466432) -  | Analysis complete. Took 17.06 seconds (~ 0.057 per item)
+2023-03-03 16:00:09,315.315 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/config/idm_config_parser.py:231 _load_config_file [VERBOSE] (413,47410874975296) - INI File Used: /projects/b1139/indie_emodpy/idmtools.ini
+2023-03-03 16:00:10,339.339 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:204 _create_from_block [VERBOSE] (413,47410874975296) - 
+[SLURM_LOCAL]
+2023-03-03 16:00:10,339.339 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/core/platform_factory.py:205 _create_from_block [VERBOSE] (413,47410874975296) - {
+   "mode": "local",
+   "job_directory": "/projects/b1139/indie_emodpy/experiments"
+}
+2023-03-03 16:00:15,782.782 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:296 _print_configuration [VERBOSE] (413,47410874975296) - Analyze Manager
+2023-03-03 16:00:15,782.782 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:297 _print_configuration [VERBOSE] (413,47410874975296) -  | 300 item(s) selected for analysis
+2023-03-03 16:00:15,782.782 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:298 _print_configuration [VERBOSE] (413,47410874975296) -  | partial_analyze_ok is True, max_items is None, and 0 item(s) are being ignored
+2023-03-03 16:00:15,782.782 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:300 _print_configuration [VERBOSE] (413,47410874975296) -  | Analyzer(s): 
+2023-03-03 16:00:15,782.782 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:302 _print_configuration [VERBOSE] (413,47410874975296) -  |  - MonthlyPfPRAnalyzer File parsing: on / Use cache: off
+2023-03-03 16:00:15,783.783 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:306 _print_configuration [VERBOSE] (413,47410874975296) -  | Pool of 28 analyzing process(es)
+2023-03-03 16:00:20,858.858 /projects/b1139/environments/emodpy_alt/lib/python3.8/site-packages/idmtools/analysis/analyze_manager.py:488 analyze [SUCCESS] (413,47410874975296) -  | Analysis complete. Took 5.08 seconds (~ 0.017 per item)
