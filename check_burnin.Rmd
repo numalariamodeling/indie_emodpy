@@ -1,0 +1,37 @@
+---
+title: "check_burnin"
+author: "Tobias Holden"
+date: "4/23/2023"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup}
+knitr::opts_chunk$set(echo = FALSE, message=F, error=F, warning = F)
+library(tidyverse)
+library(data.table)
+```
+
+### Load Spatial Report Snapshots
+
+```{r}
+# Must match folder created by SpatialAnalyzer.py
+source_exp = '79d809ab-a042-48f3-878a-6dde4f24000c'
+out_root = paste("simulation_output","baseline",source_exp, sep='/')
+spatial_filename = 'SpatialReportMalariaFiltered.csv'
+
+SR <- fread(paste(getwd(),out_root,spatial_filename,sep='/'))
+
+SR %>%
+  gather(key="variable", value="value", c("PCR_Parasite_Prevalence","Daily_Bites_Per_Human", "New_Clinical_Cases", "Population")) %>%
+  rename(xTLH=x_Temporary_Larval_Habitat) %>%
+  mutate(time=time-min(time)) %>%
+  mutate(variable=gsub("_","\n",variable)) %>%
+  ggplot(aes(x=as.Date(time, origin="2000-01-01"), y=value)) +
+  geom_path(aes(group=xTLH, color=xTLH), alpha=0.5) +
+  facet_grid(variable~paste("Cluster",node), scales="free") +
+  scale_x_date(date_breaks="4 months", date_labels = "%b") + 
+  xlab("") +ylab("") +
+  scale_color_distiller(palette="Spectral")
+```

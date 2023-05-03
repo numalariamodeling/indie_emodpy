@@ -1,0 +1,104 @@
+---
+title: "indie_sim_plots"
+author: "Tobias Holden"
+date: "3/8/2023"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message=F, error=F, warning = F)
+library(tidyverse)
+library(data.table)
+pal20 <- c('#e6194b', '#3cb44b', '#ffe119', '#4363d8', '#f58231', '#911eb4', '#46f0f0', '#f032e6', '#bcf60c', '#fabebe', '#008080', '#e6beff', '#9a6324', '#fffac8', '#800000', '#aaffc3', '#808000', '#ffd8b1', '#000075', '#808080', '#ffffff', '#000000')
+```
+
+### Load Spatial Report Snapshots
+
+```{r}
+# Must match folder created by SpatialAnalyzer.py
+exp_id = '61baaa8d-024f-40ea-9461-845623369122'
+out_root = paste("simulation_output","INDIE_habitat_test",exp_id, sep='/')
+spatial_filename = 'SpatialReportMalariaFiltered.csv'
+
+SR <- fread(paste(getwd(),out_root,spatial_filename,sep='/'))
+
+
+# Load reference data
+ref <- fread(paste('simulation_inputs','reference_data','cluster_calibration_targets.csv',sep='/'))
+
+# Generate Checkpoint Comparisons
+checkpoint_fname = paste(out_root,"checkpoint.csv",sep='/')
+```
+
+```{r}
+SR %>%
+  select(-Run_Number, -experiment) %>%
+  filter(time %in% ref$time) %>%
+  group_by(time, node, xTLH, cm_cov_u5) %>%
+  summarize_all(mean) %>%
+  left_join(ref, by=c("node","time")) %>%
+  mutate(diff=abs(PCR_Parasite_Prevalence-pcr_prevalence)) %>%
+  group_by(node, xTLH, cm_cov_u5) %>%
+  summarize(mean_err = weighted.mean(diff,n,na.rm=T)) %>%
+  group_by(node) %>%
+  mutate(rank = rank(mean_err, ties.method = "random")) %>%
+  arrange(rank) -> SR_ranked
+
+write.csv(x = SR_ranked, file = paste(checkpoint_fname))
+
+# Observe Rankings
+rank_limit=20
+
+SR_ranked %>%
+  ggplot(aes(x=log10(xTLH),y=cm_cov_u5, fill=mean_err)) +
+  geom_tile(color="white",alpha=0.5, size=0.5)+
+  #geom_tile(aes(color=rank<=rank_limit, 
+  #              alpha=rank<=rank_limit, 
+  #              size=rank<=rank_limit)) +
+  scale_alpha_manual(values=c(0,1)) + 
+  scale_color_manual(values=c("white","black"))+
+  scale_size_manual(values=c(0,0.5))+
+  scale_fill_distiller(palette="Spectral") +
+  facet_wrap(~node)
+  
+SR %>% left_join(SR_ranked, by=c("node","xTLH","cm_cov_u5")) %>%
+  filter(time >= max(time)-3*365) %>%
+  filter(rank<=rank_limit)  %>%
+  group_by(node,time) %>%
+  summarize(CI = 1.96*sd(PCR_Parasite_Prevalence)/sqrt(rank_limit),
+            PCR_Parasite_Prevalence=mean(PCR_Parasite_Prevalence)) %>%
+  ggplot(aes(x=as.Date(time, origin="2011-01-01"),
+             y=PCR_Parasite_Prevalence)) +
+  facet_wrap(~paste("Cluster",node)) +
+  geom_ribbon(aes(ymin=PCR_Parasite_Prevalence-CI, ymax=PCR_Parasite_Prevalence+CI), fill="blue", alpha=0.25) +
+  geom_path(color="blue") +
+  geom_point(data=ref, aes(x=as.Date(time, origin="2011-01-01"), y=pcr_prevalence, size=n), color="black", group=NA) +
+  xlab("") +
+  scale_y_continuous(limits = c(0,NA)) +
+  theme_minimal() +
+  labs(size=NULL) +
+  theme(legend.position=c(0.15,0.075), 
+        legend.direction = "horizontal")
+
+ggsave(paste(out_root,paste("Top",rank_limit,"ranked parameter sets.png",sep = '_'),sep="/"))
+
+
+# Stacked Plots
+
+ignore_vars <- c("Run_Number","experiment","mean_err")
+lasso <- c("node","time","xTLH","cm_cov_u5","rank")
+node_list <- factor(paste("Node",unique(SR$node)))
+rank_limit=1
+SR_ranked %>%
+  filter(rank<=rank_limit) %>%
+  left_join(SR, by = c("node","xTLH","cm_cov_u5")) %>%
+  select(-ignore_vars) %>%
+  gather(key="variable", value="value", -lasso) %>%
+  ggplot(aes(x=time, y=value)) +
+  facet_grid(gsub("_"," ",variable)~factor(paste("Node",node),levels=node_list), scales="free") +
+  geom_path(aes(group=rank, color=rank), alpha=0.7)
+
+```
+

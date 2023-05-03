@@ -15,7 +15,7 @@ import matplotlib.dates as mdates
 
 class MonthlyPfPRAnalyzer(IAnalyzer):
 
-    def __init__(self, exp_name, sweep_variables=None, working_dir='./', start_year=2020, end_year=2025,
+    def __init__(self, exp_name, sweep_variables=None, working_dir='./', start_year=2011, end_year=2020,
                  burnin=None, filter_exists=False):
 
         super(MonthlyPfPRAnalyzer, self).__init__(working_dir=working_dir,
@@ -99,7 +99,7 @@ if __name__ == "__main__":
 
     
     expts = {#'exp_name' : 'exp_id'
-              'tmh6260_indie_pickup_CM' : '6df14b84-a94f-4f23-afa0-cda00f675f29'
+              'tmh6260_indie_pickup_CM_withITN' : 'e0d35316-a22e-47a1-8ae2-f1fafb8799a7'
     }
     
     jdir =  '/projects/b1139/indie_emodpy/experiments'

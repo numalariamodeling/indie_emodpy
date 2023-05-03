@@ -18,6 +18,7 @@ plugins_folder = "download/reporter_plugins"
 CURRENT_DIR = os.path.abspath(os.path.dirname(__file__))
 ROOT_DIR = os.path.join(CURRENT_DIR)
 input_dir = os.path.join(ROOT_DIR, "simulation_inputs")
+output_dir = os.path.join(ROOT_DIR, "simulation_output")
 
 
 

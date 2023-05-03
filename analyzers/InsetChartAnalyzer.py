@@ -23,7 +23,7 @@ class InsetChartAnalyzer(IAnalyzer):
         else:
             return datetime.datetime.strptime(str(x), '%j').month
 
-    def __init__(self, expt_name, sweep_variables=None, channels=None, working_dir=".", start_year=1991):
+    def __init__(self, expt_name, sweep_variables=None, channels=None, working_dir=".", start_year=2011):
         super(InsetChartAnalyzer, self).__init__(working_dir=working_dir, filenames=["output/InsetChart.json"])
         self.sweep_variables = sweep_variables or ["Run_Number"]
         self.inset_channels = channels or ['Statistical Population', 'New Clinical Cases', 'Blood Smear Parasite Prevalence',
@@ -68,12 +68,12 @@ if __name__ == "__main__":
 
     
     expts = {#'exp_name' : 'exp_id'
-              'tmh6260_indie_pickup_CM' : '6df14b84-a94f-4f23-afa0-cda00f675f29'
+              'test_checkpoint' : 'db957fdd-aa9b-4118-812b-2d3d9b32024b'
     }
     
 
     jdir =  '/projects/b1139/indie_emodpy/experiments'
-    wdir=os.path.join(jdir, 'simulation_outputs')
+    wdir=os.path.join(jdir, 'simulation_output')
     
     if not os.path.exists(wdir):
         os.mkdir(wdir)
@@ -81,7 +81,7 @@ if __name__ == "__main__":
     sweep_variables = ['Run_Number', 'xTLH', 'cm_cov_u5'] 
 
     # set desired InsetChart channels to analyze and plot
-    channels_inset_chart = ['Statistical Population', 'True Prevalence', 'New Clinical Cases','Infectious Vectors','Rainfall','Air Temperature']
+    channels_inset_chart = ['Statistical Population', 'New Clinical Cases', 'Daily Bites per Human', 'PCR Parasite Prevalence']
 
     
     with Platform('SLURM_LOCAL',job_directory=jdir) as platform:
@@ -99,33 +99,5 @@ if __name__ == "__main__":
             # Run analyze
             manager.analyze()
             
-            
- 
-    # read in analyzed InsetChart data
-    sweep_variables = ['Run_Number', 'xTLH', 'cm_cov_u5'] 
-    expt_name=list(expts.keys())[0]
-    years_to_keep = 2
-    
-    df = pd.read_csv(os.path.join(wdir, expt_name, 'All_Age_InsetChart.csv'))
-    end = np.max(df['Time'])
-    df = df[df['Time']>=end-2*365]
-    df['date'] = pd.to_datetime(df['date'])
-    df = df.groupby(['date'] + sweep_variables)[channels_inset_chart].agg(np.mean).reset_index()
 
-    # make InsetChart plot
-    fig1 = plt.figure('InsetChart', figsize=(12, 6))
-    fig1.subplots_adjust(hspace=0.5, left=0.08, right=0.97)
-    fig1.suptitle(f'Analyzer: InsetChartAnalyzer')
-    axes = [fig1.add_subplot(2, 3, x + 1) for x in range(6)]
-    for ch, channel in enumerate(channels_inset_chart):
-        ax = axes[ch]
-        for p, pdf in df.groupby(sweep_variables):
-            ax.plot(pdf['date'], pdf[channel], '-', linewidth=0.8, label=p)
-        ax.set_title(channel)
-        ax.set_ylabel(channel)
-        ax.xaxis.set_major_locator(mdates.MonthLocator(interval=12))
-        ax.xaxis.set_major_formatter(mdates.DateFormatter('%Y'))
-    if len(sweep_variables) > 0:
-        axes[-1].legend(title=sweep_variables)
-    fig1.savefig(os.path.join(wdir, expt_name, 'InsetChart.png'))        
 

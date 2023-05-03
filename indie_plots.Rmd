@@ -1,0 +1,57 @@
+---
+title: "indie_plots"
+author: "Tobias Holden"
+date: "5/2/2023"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(data.table)
+root <- 'simulation_output'
+experiment <- 'INDIE_habitat_test'
+exp_id <- '61baaa8d-024f-40ea-9461-845623369122'
+
+path <- paste(root,experiment,exp_id,sep='/')
+```
+
+```{r}
+
+events <- fread(paste(path,"CountedEvents.csv",sep='/'))
+spatial_df <- fread(paste(path,"SpatialReportMalariaFiltered.csv",sep='/'))
+
+colnames(spatial_df) <- toupper(colnames(spatial_df))
+colnames(events) <- toupper(colnames(events))
+
+common_cols <- intersect(colnames(spatial_df),colnames(events))
+
+
+pin <- length(common_cols)+1
+
+combo <- inner_join(spatial_df, events, by=common_cols)
+end <- ncol(combo)
+
+remove(events)
+remove(spatial_df)
+
+ignore_vars <- c("RUN_NUMBER","EXPERIMENT")
+
+combo %>%
+  relocate(common_cols) %>%
+  gather(key="variable",value="value", pin:end) %>%
+  group_by_at(c(common_cols[!(common_cols %in% ignore_vars)],"variable")) %>%
+  summarize(mean=mean(value),
+            sd=sd(value),
+            n = n()) -> df
+
+for(var in unique(df$variable)){
+  for(n in unique(df$NODE)){
+    df %>% 
+      filter(NODE==n & variable==var) %>%
+      ggplot(aes(x=TIME, y=mean)) +
+      geom_path(aes(group=XTLH)) +
+      facet_wrap(~CM_COV_U5)
+  }
+}
+```
