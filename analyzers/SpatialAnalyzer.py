@@ -169,10 +169,10 @@ if __name__ == "__main__":
     
     
     expts = {#'indie_vector_test_burnin' : '79d809ab-a042-48f3-878a-6dde4f24000c',
-             'indie_habitat_test' : '1f99f29a-a23a-4cf5-ae17-a9397210d254'}
+             'checkpoint_test' : '3e48d65c-391d-4916-89d4-a8bc774a78e1'}
     
     jdir =  '/projects/b1139/indie_emodpy/experiments'
-    wdir=os.path.join('/projects/b1139/indie_emodpy/simulation_output', 'INDIE_habitat_test')
+    wdir=os.path.join('/projects/b1139/indie_emodpy/simulation_output', 'checkpoint_test')
     
     sweep_variables = ['Run_Number', 'xTLH', 'cm_cov_u5'] # for pickups
     spatial_channels = ['Population', 'PCR_Parasite_Prevalence','Daily_Bites_Per_Human','New_Clinical_Cases']

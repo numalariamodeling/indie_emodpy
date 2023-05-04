@@ -104,12 +104,9 @@ class SpatialAnalyzer(IAnalyzer):
         self.parse = False
         self.sweep_variables = sweep_variables or ['Run_Number', 'x_Temporary_Larval_Habitat']
         self.spatial_channels = spatial_channels
-        self.output_fname = os.path.join(self.working_dir, self.exp_id, f"SpatialReportMalariaFiltered.csv")
+        self.output_fname = os.path.join(self.working_dir, f"SpatialReportMalariaFiltered.csv")
         self.snapshot = snapshot
         
-
-        # make sure output folder exists
-        os.makedirs(os.path.join(self.working_dir, self.exp_id), exist_ok=True)
 
     def map(self, data, simulation: Simulation):
         # we have to parse our data first since it will be a raw set of binary data
@@ -153,7 +150,7 @@ class SpatialAnalyzer(IAnalyzer):
             # save snapshots
             if self.snapshot is not None:
                 d_sub = d[d['time'] == self.snapshot[0]] 
-                sub_fname = os.path.join(self.working_dir, 'spatial_output',self.dir_name,f"SpatialReportMalariaFiltered_Snapshot.csv")
+                sub_fname = os.path.join(self.working_dir,f"SpatialReportMalariaFiltered_Snapshot.csv")
                 if(len(self.snapshot)>1):
                     for snap in self.snapshot[1:]:
                         d_sub_add = d[d['time'] == snap]
@@ -170,39 +167,33 @@ if __name__ == "__main__":
     from idmtools.core import ItemType
     from idmtools.core.platform_factory import Platform
     
-    # {'experiment label' : 'exp_id'}
-    expts = {'FE_spatial_example' : '3704a728-523e-49dd-a3b2-c739de1c3728'}
-    # experiments folder
+    
+    expts = {#'indie_vector_test_burnin' : '79d809ab-a042-48f3-878a-6dde4f24000c',
+             'spatial_example' : '6a84d3aa-4030-42dc-a3da-34e2cc01f02b'}
+    
     jdir =  '/projects/b1139/indie_emodpy/experiments'
-    # output folder
-    wdir=os.path.join('/projects/b1139/indie_emodpy/simulation_output', 'FE_Example')
+    wdir=os.path.join('/projects/b1139/indie_emodpy/simulation_output', 'FE_example')
     
-    if not os.path.exists(wdir):
-        os.mkdir(wdir)
-    # Define sweep variables
-    sweep_variables = ['Run_Number', 'xTLH'] 
-    # Spatial channels from list provided to add_spatial_report_malaria_filtered() 
+    sweep_variables = ['Run_Number', 'xTLH', 'cm_cov_u5'] # for pickups
     spatial_channels = ['Population', 'PCR_Parasite_Prevalence','New_Clinical_Cases']
-    
+    dates = [213, 365, 516, 745]
+    dates = np.array(dates)
+    dates = 8*365 + dates
+    if not os.path.exists(wdir):
+                os.mkdir(wdir)
     with Platform('SLURM_LOCAL',job_directory=jdir) as platform:
-        for expname, exp_id in expts.items():
+        for expname, exp_id in expts.items():    
+            if not os.path.exists(os.path.join(wdir,exp_id)):
+                os.mkdir(os.path.join(wdir,exp_id))
+                
             analyzer = [SpatialAnalyzer(dir_name=expname,
                                         exp_id = exp_id,
                                         spatial_channels=spatial_channels,
                                         sweep_variables=sweep_variables,
-                                        working_dir=wdir)]
+                                        working_dir=os.path.join(wdir,exp_id))]
             
             # Create AnalyzerManager with required parameters
             manager = AnalyzeManager(configuration={},ids=[(exp_id, ItemType.EXPERIMENT)],
                                      analyzers=analyzer, partial_analyze_ok=True)
             # Run analyze
             manager.analyze()
-    
-    # PLOTTING? 
-    make_plots = False
-    
-    if make_plots:
-        from plotnine.data import mpg
-        from plotnine import ggplot, aes, labs, geom_path
-        
-    

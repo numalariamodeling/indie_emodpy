@@ -10,8 +10,8 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(data.table)
 root <- 'simulation_output'
-experiment <- 'INDIE_habitat_test'
-exp_id <- '61baaa8d-024f-40ea-9461-845623369122'
+experiment <- 'checkpoint_test'
+exp_id <- '3e48d65c-391d-4916-89d4-a8bc774a78e1'
 
 path <- paste(root,experiment,exp_id,sep='/')
 ```
@@ -26,24 +26,28 @@ colnames(events) <- toupper(colnames(events))
 
 common_cols <- intersect(colnames(spatial_df),colnames(events))
 
-
-pin <- length(common_cols)+1
-
 combo <- inner_join(spatial_df, events, by=common_cols)
-end <- ncol(combo)
+
 
 remove(events)
 remove(spatial_df)
 
-ignore_vars <- c("RUN_NUMBER","EXPERIMENT")
+
+common_cols <- common_cols[!(common_cols %in% ignore_vars)]
+pin <- length(common_cols)+1
+
+
+combo[ , -c("RUN_NUMBER","EXPERIMENT")] -> combo
+end <- ncol(combo)
 
 combo %>%
   relocate(common_cols) %>%
   gather(key="variable",value="value", pin:end) %>%
-  group_by_at(c(common_cols[!(common_cols %in% ignore_vars)],"variable")) %>%
+  group_by_at(c(common_cols,"variable")) %>%
   summarize(mean=mean(value),
             sd=sd(value),
             n = n()) -> df
+
 
 for(var in unique(df$variable)){
   for(n in unique(df$NODE)){
@@ -52,6 +56,8 @@ for(var in unique(df$variable)){
       ggplot(aes(x=TIME, y=mean)) +
       geom_path(aes(group=XTLH)) +
       facet_wrap(~CM_COV_U5)
+    
+    ggsave(paste("node",n,"calibration",var,"mean.png"))
   }
 }
 ```

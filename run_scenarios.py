@@ -48,12 +48,12 @@ from utils_slurm import build_burnin_df
 # Sim. Specifications #
 #######################
 user = os.getlogin()                                 # username for paths & naming files
-tag = 'habitat_test'                            # label for experiment
+tag = 'checkpoint_test'                               # label for experiment
 phase = 'pickup'                                     # burnin or pickup?
-burnin_id = '72a9219f-6edd-4861-bb33-5669906fd142'   # experiment id containing serialized population (required for pickup)
+burnin_id = '95501715-6532-4315-bf08-ed0cf322af38'   # experiment id containing serialized population (required for pickup)
 checkpoint = None                                    # filename containing ranked parameter sets from baseline calibration - usually "checkpoint.csv"
 # checkpoint = 'f3eea3bd-fa3e-44e2-aed3-c657539f8a5c_checkpoint.csv'
-checkpoint_dir = "/".join((manifest.output_dir,"baseline",tag))
+checkpoint_dir = "/".join((manifest.output_dir,tag))
 
 if not os.path.exists(checkpoint_dir):
     os.makedirs(checkpoint_dir)
@@ -227,7 +227,11 @@ def build_camp(cm_cov_u5=0.8):
                             demographic_coverage = 0.9, 
                             repetitions = 4, 
                             timesteps_between_repetitions = 365*3, 
-                            receiving_itn_broadcast_event= "Received_ITN")
+                            receiving_itn_broadcast_event= "Received_ITN", 
+                            # ITN parameters from malaria-bf-hbhi/simulation/setup_inputs/set_up_planned_scenarios.py
+                            killing_initial_effect = 0.7,
+                            killing_box_duration = 180,
+                            killing_decay_time_constant = 90)
                             
       ### Case Management ###
       # Treatment-Seeking Rates by age #

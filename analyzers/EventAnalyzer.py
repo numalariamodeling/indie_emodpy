@@ -136,10 +136,10 @@ if __name__ == "__main__":
     from idmtools.core import ItemType
     from idmtools.core.platform_factory import Platform
     
-    expts = {'INDIE_habitat_test': '1f99f29a-a23a-4cf5-ae17-a9397210d254'}
-    
+    expts = {'checkpoint_test': '3e48d65c-391d-4916-89d4-a8bc774a78e1'}
+    clusters = ["1","2","3","4","5","6"]
     jdir =  '/projects/b1139/indie_emodpy/experiments'
-    wdir=os.path.join('/projects/b1139/indie_emodpy/simulation_output', 'INDIE_habitat_test')
+    wdir=os.path.join('/projects/b1139/indie_emodpy/simulation_output', 'checkpoint_test')
     sweep_variables = ['Run_Number','xTLH','cm_cov_u5']
     events = ['Received_ITN', 'Received_Treatment', 'Received_SMC']
     if not os.path.exists(wdir):
@@ -151,7 +151,7 @@ if __name__ == "__main__":
             analyzer = [EventCounterAnalyzer(exp_name = expname, 
                                              exp_id = exp_id, 
                                              sweep_variables = sweep_variables, 
-                                             nodes = ["1","2","3","4","5","6"], 
+                                             nodes = clusters, 
                                              events = events,
                                              working_dir = wdir,
                                              start_day = (10-3)*365)]

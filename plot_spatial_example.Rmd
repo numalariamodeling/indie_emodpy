@@ -14,8 +14,8 @@ library(data.table)
 ```
 
 ```{r}
-exp_id <- '3704a728-523e-49dd-a3b2-c739de1c3728'
-root <- paste('simulation_output','FE_Example',exp_id,sep='/')
+exp_id <- '6a84d3aa-4030-42dc-a3da-34e2cc01f02b'
+root <- paste('simulation_output','FE_example',exp_id,sep='/')
 events <- fread(paste(root,"CountedEvents.csv", sep='/'))
 malaria_channels <- fread(paste(root,"SpatialReportMalariaFiltered.csv",sep='/'))
 
