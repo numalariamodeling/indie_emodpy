@@ -1,7 +1,7 @@
 from emodpy_malaria.weather import *
 import os
 
-def get_climate(tag = "default", start_year="2015", start_day="001", end_year="2016", end_day="365", demo_fname="demographics.csv", fix_temp=None):
+def get_climate(tag = "default",label="unedited", start_year="2015", start_day="001", end_year="2016", end_day="365", demo_fname="demographics.csv", fix_temp=None, rain_shift=None):
     # Specifications #
     ##################
     # Date Range
@@ -12,14 +12,14 @@ def get_climate(tag = "default", start_year="2015", start_day="001", end_year="2
     demo = "".join(("simulation_inputs/demographics/",demo_fname))
     
     # Output folder to store climate files
-    dir1 = "/".join(("simulation_inputs/climate",tag,"-".join((start,end))))
+    dir1 = "/".join(("simulation_inputs/climate",tag,label,"-".join((start,end))))
     
-    if os.path.exists(dir1):
+    if os.path.exists(dir1) and fix_temp is None and rain_shift is None:
         print("Path already exists. Please check for existing climate files.")
         return
     else:
         print("Generating climate files from {} for day {} of {} to day {} of {}".format(demo,start_day,start_year,end_day,end_year))
-        os.makedirs(dir1)
+        os.makedirs(dir1,exist_ok=True)
         csv_file=os.path.join(dir1,"weather.csv")
         # Request weather files
         wa = WeatherArgs(site_file= demo,
@@ -34,26 +34,36 @@ def get_climate(tag = "default", start_year="2015", start_day="001", end_year="2
         
         print(f"Original files are downloaded in: {dir1}") 
         
-        df, wa = weather_to_csv(weather_dir = dir1, csv_file=csv_file)
-        df.to_csv(csv_file)
-    
-        if fix_temp is not None:
-            df['airtemp'] = fix_temp
-            df['landtemp'] = fix_temp
+        if rain_shift is not None or fix_temp is not None:
+            df, wa = weather_to_csv(weather_dir = dir1, csv_file=csv_file)
+        
+            if rain_shift is not None:
+                # Shift weather (rain) left rain_shift days
+                max_step = df['steps'].max()
+                df['steps']= df['steps'] - rain_shift
+                df.loc[(df['steps']<=0),"steps"] = df.loc[(df['steps']<=0),"steps"] + max_step
+            if fix_temp is not None:
+                df['airtemp'] = float(fix_temp)
+                df['landtemp'] = float(fix_temp)
+            
+            df.to_csv(csv_file)
             weather_columns = {WeatherVariable.AIR_TEMPERATURE: "airtemp",
                                WeatherVariable.LAND_TEMPERATURE: "landtemp",
                                WeatherVariable.RELATIVE_HUMIDITY: "humidity",
                                WeatherVariable.RAINFALL: "rainfall"}
-            weather_filenames = {WeatherVariable.AIR_TEMPERATURE: 'dtk_15arcmin_air_temperature_daily.bin',
-                                 WeatherVariable.LAND_TEMPERATURE: "dtk_15arcmin_land_temperature_daily.bin",
-                                 WeatherVariable.RELATIVE_HUMIDITY: "dtk_15arcmin_relative_humidity_daily.bin",
-                                 WeatherVariable.RAINFALL: "dtk_15arcmin_rainfall_daily.bin"}
+            weather_filenames = {WeatherVariable.AIR_TEMPERATURE: 'dtk_15arcmin_air_temperature_daily_revised.bin',
+                                 WeatherVariable.LAND_TEMPERATURE: "dtk_15arcmin_land_temperature_daily_revised.bin",
+                                 WeatherVariable.RELATIVE_HUMIDITY: "dtk_15arcmin_relative_humidity_daily_revised.bin",
+                                 WeatherVariable.RAINFALL: "dtk_15arcmin_rainfall_daily_revised.bin"}
             
             ws2 = csv_to_weather(csv_data=df, attributes=wa, weather_dir=dir1, weather_columns=weather_columns, weather_file_names = weather_filenames)
-            ws2.to_files(dir_path=dir1)
+            specs = "_".join((fix_temp,"degrees",rain_shift, "shift"))
+            dir2 = os.path.join(dir1,specs)
+            ws2.to_files(dir_path=dir2)
             
-            print(f"Fixed-Temperature ({fix_temp} degrees) files are downloaded in: {dir1}")  # same as out_dir
+            print(f"Revised ({fix_temp} degrees, -{rain_shift} day rain-shift) files are downloaded in: {dir2}")  # same as out_dir
 
 if __name__ == "__main__":
-    #get_climate(tag="indie_clusters", start_year="2011", end_year = "2020", demo_fname="clusters.csv")
-    get_climate(tag="FE_example", start_year="2019", end_year="2019", demo_fname="FE_example_nodes.csv")
+    get_climate(tag="indie_clusters", label="test", start_year="2011", end_year = "2020", demo_fname="clusters.csv", rain_shift=None, fix_temp=30)
+    get_climate(tag="indie_clusters", label="test", start_year="2018", end_year = "2020", demo_fname="clusters.csv", rain_shift=None, fix_temp=30)
+    #get_climate(tag="FE_example", start_year="2019", end_year="2019", demo_fname="FE_example_nodes.csv")

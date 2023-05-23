@@ -136,10 +136,13 @@ if __name__ == "__main__":
     from idmtools.core import ItemType
     from idmtools.core.platform_factory import Platform
     
-    expts = {'checkpoint_test': '3e48d65c-391d-4916-89d4-a8bc774a78e1'}
+    expts = {#'checkpoint_test': '3e48d65c-391d-4916-89d4-a8bc774a78e1',
+             #'habitat_test': '30665704-96a9-4245-b450-7d7994a73874',
+             'rainfall_shift': '67187c60-f3e5-4fa9-92a7-11afdc357330'}
+             
     clusters = ["1","2","3","4","5","6"]
     jdir =  '/projects/b1139/indie_emodpy/experiments'
-    wdir=os.path.join('/projects/b1139/indie_emodpy/simulation_output', 'checkpoint_test')
+    wdir= '/projects/b1139/indie_emodpy/simulation_output'
     sweep_variables = ['Run_Number','xTLH','cm_cov_u5']
     events = ['Received_ITN', 'Received_Treatment', 'Received_SMC']
     if not os.path.exists(wdir):

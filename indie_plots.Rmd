@@ -33,31 +33,21 @@ remove(events)
 remove(spatial_df)
 
 
-common_cols <- common_cols[!(common_cols %in% ignore_vars)]
-pin <- length(common_cols)+1
-
-
 combo[ , -c("RUN_NUMBER","EXPERIMENT")] -> combo
+common_cols <- common_cols[!(common_cols %in% c("RUN_NUMBER","EXPERIMENT"))]
+pin <-  length(common_cols) + 1
 end <- ncol(combo)
+```
+
+```{r}
 
 combo %>%
-  relocate(common_cols) %>%
-  gather(key="variable",value="value", pin:end) %>%
-  group_by_at(c(common_cols,"variable")) %>%
-  summarize(mean=mean(value),
-            sd=sd(value),
-            n = n()) -> df
-
-
-for(var in unique(df$variable)){
-  for(n in unique(df$NODE)){
-    df %>% 
-      filter(NODE==n & variable==var) %>%
-      ggplot(aes(x=TIME, y=mean)) +
-      geom_path(aes(group=XTLH)) +
-      facet_wrap(~CM_COV_U5)
-    
-    ggsave(paste("node",n,"calibration",var,"mean.png"))
-  }
-}
+  select(TIME, NODE, XTLH, CM_COV_U5, POPULATION) %>%
+  group_by(TIME, NODE, XTLH, CM_COV_U5) %>%
+  summarize(POPULATION=mean(POPULATION),
+            sd=sd(POPULATION)) %>%
+  ggplot(aes(x=TIME, y=POPULATION, group=XTLH)) +
+  geom_path() +
+  facet_grid(NODE~CM_COV_U5)
 ```
+
