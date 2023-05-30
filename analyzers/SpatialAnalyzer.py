@@ -171,12 +171,19 @@ if __name__ == "__main__":
     expts = {#'indie_vector_test_burnin' : '79d809ab-a042-48f3-878a-6dde4f24000c',
              #'checkpoint_test' : '3e48d65c-391d-4916-89d4-a8bc774a78e1',
              #'habitat_test': '30665704-96a9-4245-b450-7d7994a73874',
-             'rainfall_shift': '67187c60-f3e5-4fa9-92a7-11afdc357330'}
+             #'rainfall_shift': '67187c60-f3e5-4fa9-92a7-11afdc357330',
+             #'30degree': 'cc51fc74-e79b-4c92-be34-f9f741fb4212',
+             #'30degree_3x': '3bc9a766-555e-4319-9681-824911b17cad',
+             #'30degree_10x':'f5ddee15-217d-4c9d-8920-196f3c890baa',
+             #'30degree_50x': 'e8ac22a6-d7fb-49a0-9b3a-de69edb3cfe1',
+             #'30degree_VarX': 'e4dec631-7f16-4b43-9cab-f0b4b6276cb7',
+             '30degree_VarX_test': '8595ff17-40f2-46d2-b2f0-0208e4fe8b23'}
     
     jdir =  '/projects/b1139/indie_emodpy/experiments'
     wdir= '/projects/b1139/indie_emodpy/simulation_output'
     
-    sweep_variables = ['Run_Number', 'xTLH', 'cm_cov_u5'] # for pickups
+    sweep_variables = ['Run_Number', 'x_Temporary_Larval_Habitat','HR'] # for burnins
+    #sweep_variables = ['Run_Number', 'xTLH', 'cm_cov_u5','HR'] # for pickups
     spatial_channels = ['Population', 'PCR_Parasite_Prevalence','Daily_Bites_Per_Human','New_Clinical_Cases', 'Rainfall', 'Air_Temperature']
     dates = [213, 365, 516, 745]
     dates = np.array(dates)

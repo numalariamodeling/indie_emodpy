@@ -48,9 +48,9 @@ from utils_slurm import build_burnin_df
 # Sim. Specifications #
 #######################
 user = os.getlogin()                                     # username for paths & naming files
-tag = 'rainfall_shift'                                  # label for experiment
+tag = '30degree_HabRatio'                                  # label for experiment
 phase = 'burnin'                                         # burnin or pickup?
-burnin_id = ''       # experiment id containing serialized population (required for pickup)
+burnin_id = 'e4dec631-7f16-4b43-9cab-f0b4b6276cb7'       # REQ. for pickup
 checkpoint_id = ''   # checkpoint experiment from calibration
 checkpoint = None    
 
@@ -61,15 +61,19 @@ pickup_years = 10    # 2011-2020
 if(phase=="burnin"):
     num_seeds = 1         # number stochastic realizations
     # Vary Habitat Scale Factors
-    num_xTLH_samples = 30
-    min_xTLH = -0.5
-    max_xTLH = 1.2 
+    num_xTLH_samples = 20
+    min_xTLH = 0.5
+    max_xTLH = 1.5 
+    # Vary Habitat Ratios
+    min_HR = 10
+    max_HR = 100
+    num_HR_samples = 10
 if(phase=="pickup"): 
-    num_seeds = 10        # number stochastic realizations
+    num_seeds = 5        # number stochastic realizations
     # Vary Case Management
-    min_CM = 0.4
+    min_CM = 0.8
     max_CM = 0.8
-    num_CM_samples = 5
+    num_CM_samples = 1
   
 if checkpoint is not None:
     burnin_years = 37      # 1981-2017
@@ -110,49 +114,44 @@ def set_param_fn(config):
     scale_gambiae = 0.96
     scale_funestus = 0.03
     
+    # Habitat Ratio (TR:Constant)
+    constant = 5000000.0
+    temp_rain_ratio = 1.0
     
     conf.set_species_param(config, 
                            species= 'gambiae', 
                            parameter="Habitats", 
                            value= [{"Habitat_Type": "CONSTANT", 
-                                    "Max_Larval_Capacity": 30000000.0*scale_gambiae},
+                                    "Max_Larval_Capacity": constant*scale_gambiae},
                                    {"Habitat_Type": "TEMPORARY_RAINFALL", 
-                                    "Max_Larval_Capacity":30000000.0*scale_gambiae}], 
+                                    "Max_Larval_Capacity":constant*scale_gambiae*temp_rain_ratio}], 
                            overwrite=True) # delete previous habitat types 
     conf.set_species_param(config, 
                            species= 'arabiensis', 
                            parameter="Habitats", 
                            value= [{"Habitat_Type": "CONSTANT", 
-                                    "Max_Larval_Capacity": 30000000.0*scale_arabiensis},
+                                    "Max_Larval_Capacity": constant*scale_arabiensis},
                                    {"Habitat_Type": "TEMPORARY_RAINFALL", 
-                                    "Max_Larval_Capacity":30000000.0*scale_arabiensis}], 
+                                    "Max_Larval_Capacity":constant*scale_arabiensis*temp_rain_ratio}], 
                            overwrite=True) # delete previous habitat types 
     conf.set_species_param(config, 
                            species= 'funestus', 
                            parameter="Habitats", 
                            value= [{"Habitat_Type": "CONSTANT", 
-                                    "Max_Larval_Capacity": 30000000.0*scale_funestus},
+                                    "Max_Larval_Capacity": constant*scale_funestus},
                                    {"Habitat_Type": "TEMPORARY_RAINFALL", 
-                                    "Max_Larval_Capacity":30000000.0*scale_funestus}], 
+                                    "Max_Larval_Capacity":constant*scale_funestus*temp_rain_ratio}], 
                            overwrite=True) # delete previous habitat types 
-           
-    #conf.set_max_larval_capacity(config, 'gambiae', 'WATER_VEGETATION',20000000*scale_gambiae)
-    #conf.set_max_larval_capacity(config, 'gambiae', 'CONSTANT', 800000000*scale_gambiae)
-    #conf.set_max_larval_capacity(config, 'gambiae', 'TEMPORARY_RAINFALL', 800000000*scale_arabiensis)
-    #conf.set_max_larval_capacity(config, 'arabiensis', 'TEMPORARY_RAINFALL', 800000000*scale_arabiensis)
-    #conf.set_max_larval_capacity(config, 'arabiensis', 'CONSTANT', 800000000*scale_arabiensis)
-    #conf.set_max_larval_capacity(config, 'funestus', 'TEMPORARY_RAINFALL', 800000000*scale_funestus)
-    #conf.set_max_larval_capacity(config, 'funestus', 'CONSTANT', 800000000*scale_funestus)
     
     
     # Climate
-    climate_root = os.path.join('climate','indie_clusters/30deg', '2011001-2020365')
+    climate_root = os.path.join('climate','2011-2020','30.0degrees')
     if checkpoint is not None and phase=="pickup":
-        climate_root = os.path.join('climate','indie_clusters/30deg', '2018001-2020365')
-    config.parameters.Air_Temperature_Filename = os.path.join(climate_root,'dtk_15arcmin_air_temperature_daily_revised.bin')
-    config.parameters.Land_Temperature_Filename = os.path.join(climate_root, 'dtk_15arcmin_air_temperature_daily_revised.bin')
-    config.parameters.Rainfall_Filename = os.path.join(climate_root, 'dtk_15arcmin_rainfall_daily_revised.bin')
-    config.parameters.Relative_Humidity_Filename = os.path.join(climate_root, 'dtk_15arcmin_relative_humidity_daily_revised.bin')
+        climate_root = os.path.join('climate','2018-2020','30.0degrees')
+    config.parameters.Air_Temperature_Filename = os.path.join(climate_root,'dtk_15arcmin_air_temperature_daily.bin')
+    config.parameters.Land_Temperature_Filename = os.path.join(climate_root, 'dtk_15arcmin_air_temperature_daily.bin')
+    config.parameters.Rainfall_Filename = os.path.join(climate_root, 'dtk_15arcmin_rainfall_daily.bin')
+    config.parameters.Relative_Humidity_Filename = os.path.join(climate_root, 'dtk_15arcmin_relative_humidity_daily.bin')
         
     # Serialization
     if(phase=="burnin"):
@@ -195,179 +194,96 @@ def set_param(simulation, param, value):
 # Build Campaign #
 ##################
 
-def build_camp(cm_cov_u5=0.8, checkpoint=None, rank_limit = 1):
+def build_camp(scale_start_day = 1, habitat_ratio = 50.0, cm_cov_u5 =0.8):
     """
     This function builds a campaign input file for the DTK using emod_api.
     """
-
-    camp.schema_path = manifest.schema_file
-    
+    camp.set_schema(manifest.schema_file)
     df = pd.read_csv(os.path.join(manifest.input_dir,"demographics","clusters.csv"))
-    scales=[pop / 1000 for pop in list(df['pop'])]
-    # To scale all habitats based on node population
+    # Scale Temporary Rainfall relative to Constant habitat
+    scales=[habitat_ratio] * len(df.index)
     lh_scales = pd.DataFrame({'NodeID': list(df['node_id']),
-                              'CONSTANT': scales,
-                              'TEMPORARY_RAINFALL': scales})
+                              'TEMPORARY_RAINFALL':scales})
+    add_scale_larval_habitats(camp, lh_scales, start_day=scale_start_day)
     
-    add_scale_larval_habitats(camp, df=lh_scales, start_day=1)
+    # Scale larval habitats by node population
+    
+    pop_scales=[pop / 1000 for pop in list(df['pop'])]
+    lh_pop_scales = pd.DataFrame({'NodeID': list(df['node_id']),
+                              'CONSTANT': pop_scales,
+                              'TEMPORARY_RAINFALL': pop_scales})
+    
+    add_scale_larval_habitats(camp, df=lh_pop_scales, start_day=scale_start_day)
     
     
     ### Calibration (no checkpoint)
     ###############################
     # Note: no interventions during burnin of calibration framework
-    if checkpoint is  None:
-        if(phase =="pickup"):
-          ### ITN Distributions ###
-          itn.add_itn_scheduled(camp, 
-                                start_day = 165, 
-                                demographic_coverage = 0.9, 
-                                repetitions = 4, 
-                                timesteps_between_repetitions = 365*3, 
-                                receiving_itn_broadcast_event= "Received_ITN", 
-                                # ITN parameters from malaria-bf-hbhi/simulation/setup_inputs/set_up_planned_scenarios.py
-                                killing_initial_effect = 0.7,
-                                killing_box_duration = 180,
-                                killing_decay_time_constant = 90)
-                                
-          ### Case Management ###
-          # Treatment-Seeking Rates by age #
-          cm_coverage_by_age = [{'trigger': 'NewClinicalCase',      ## For uncomplicated symptomatic cases < 5
-                                            'coverage': cm_cov_u5,
-                                            'agemin': 0,
-                                            'agemax': 5,
-                                            'seek': 1,
-                                            'rate': 0.3},
-                                {'trigger': 'NewClinicalCase',      ## For uncomplicated symptomatic cases 5-15
-                                            'coverage': cm_cov_u5*0.6,
-                                            'agemin': 5,
-                                            'agemax': 15,
-                                            'seek': 1,
-                                            'rate': 0.3},
-                                {'trigger': 'NewClinicalCase',      ## For uncomplicated symptomatic cases 15+
-                                            'coverage': cm_cov_u5*0.4,
-                                            'agemin': 15,
-                                            'agemax': 115,
-                                            'seek': 1,
-                                            'rate': 0.3},
-                                {'trigger': 'NewSevereCase',        ## For severe clinical cases, all-ages
-                                            'coverage': 0.8,
-                                            'agemin': 0,
-                                            'agemax': 115,
-                                            'seek': 1,
-                                            'rate': 0.5}]
-          # Treatment #                                 
-          cm.add_treatment_seeking(camp, 
-                                   start_day = 1, 
-                                   drug=['Artemether','Lumefantrine'],
-                                   targets=cm_coverage_by_age,
-                                   broadcast_event_name="Received_Treatment")
-                                   
-                                   
-          ### SMC ###
-          smc_dates = [2394, 2765, 3122, 3489]   # 4 rounds in each cycle, 1 month between rounds. Beginning in July each year 2016-2019
-          # Modeled as a simple MDA
-          dc.add_drug_campaign(camp, campaign_type="MDA", drug_code="SPA", 
-                               start_days=smc_dates,
-                               repetitions=4, 
-                               tsteps_btwn_repetitions=30, 
-                               coverage=0.95,
-                               target_group={'agemin': 0.25, 'agemax': 5},
-                               receiving_drugs_event_name="Received_SMC")
-    
-    ### Scenarios (from checkpoint)
-    ###############################
-    if checkpoint is not None:
-        cp = checkpoint[checkpoint['rank']<=rank_limit]
-        cp = cp[['node','rank','xTLH','cm_cov_u5']]
-        
-        ### Case Management ###
-        # Treatment-Seeking Rates by age #
-        cm_coverage_by_age = [{'trigger': 'NewClinicalCase',      ## For uncomplicated symptomatic cases < 5
-                               'coverage': cm_cov_u5,
-                               'agemin': 0,
-                               'agemax': 5,
-                               'seek': 1,
-                               'rate': 0.3},
-                               {'trigger': 'NewClinicalCase',      ## For uncomplicated symptomatic cases 5-15
-                                'coverage': cm_cov_u5*0.6,
-                                'agemin': 5,
-                                'agemax': 15,
-                                'seek': 1,
-                                'rate': 0.3},
-                               {'trigger': 'NewClinicalCase',      ## For uncomplicated symptomatic cases 15+
-                                'coverage': cm_cov_u5*0.4,
-                                'agemin': 15,
-                                'agemax': 115,
-                                'seek': 1,
-                                'rate': 0.3},
-                               {'trigger': 'NewSevereCase',        ## For severe clinical cases, all-ages
-                                'coverage': 0.8,
-                                'agemin': 0,
-                                'agemax': 115,
-                                'seek': 1,
-                                'rate': 0.5}]
-        if(phase == "burnin"):
-            ### Case Management (at checkpoint coverage)                              
-            cm.add_treatment_seeking(camp, 
-                                     start_day = 30*365,                # Starting after 30 years of no intervention 
-                                     drug=['Artemether','Lumefantrine'],
-                                     targets=cm_coverage_by_age,
-                                     broadcast_event_name="Received_Treatment")
-            ### 2010, 2013, and 2016 ITN Distributions ###
-            itn.add_itn_scheduled(camp, 
-                                  start_day = 30*365+165, 
-                                  demographic_coverage = 0.9, 
-                                  repetitions = 3,
-                                  timesteps_between_repetitions = 365*3, 
-                                  receiving_itn_broadcast_event= "Received_ITN",
-                                  # ITN parameters from malaria-bf-hbhi/simulation/setup_inputs/set_up_planned_scenarios.py
-                                  killing_initial_effect = 0.7,
-                                  killing_box_duration = 180,
-                                  killing_decay_time_constant = 90)
-            ### SMC in 2016 and 2017 ###
-            smc_dates = [30*365+2394, 30*365+2765]   # 4 rounds in each cycle, 1 month between rounds. Beginning in July 2016 and 2017
-            # Modeled as a simple MDA
-            dc.add_drug_campaign(camp, campaign_type="MDA", drug_code="SPA", 
-                                 start_days=smc_dates,
-                                 repetitions=4, 
-                                 tsteps_btwn_repetitions=30, 
-                                 coverage=0.95,
-                                 target_group={'agemin': 0.25, 'agemax': 5},
-                                 receiving_drugs_event_name="Received_SMC")
-        if(phase =="pickup"):
-            ### Case Management (at checkpoint coverage)                              
-            cm.add_treatment_seeking(camp, 
-                                     start_day = 1,
-                                     drug=['Artemether','Lumefantrine'],
-                                     targets=cm_coverage_by_age,
-                                     broadcast_event_name="Received_Treatment")
-            ### 2019 ITN Distribution ###
-            itn.add_itn_scheduled(camp, 
-                                  start_day = 548, 
-                                  demographic_coverage = 0.9, 
-                                  repetitions = 1,  
-                                  receiving_itn_broadcast_event= "Received_ITN",
-                                  # ITN parameters from malaria-bf-hbhi/simulation/setup_inputs/set_up_planned_scenarios.py
-                                  killing_initial_effect = 0.7,
-                                  killing_box_duration = 180,
-                                  killing_decay_time_constant = 90)              
-            ### SMC in 2018 and 2019 ###
-            smc_dates = [202,569]   # 4 rounds in each cycle, 1 month between rounds. July 2018 and 2019
-            # Modeled as a simple MDA
-            dc.add_drug_campaign(camp, campaign_type="MDA", drug_code="SPA", 
-                                 start_days=smc_dates,
-                                 repetitions=4, 
-                                 tsteps_btwn_repetitions=30, 
-                                 coverage=0.95,
-                                 target_group={'agemin': 0.25, 'agemax': 5},
-                                 receiving_drugs_event_name="Received_SMC")
+    if(phase =="pickup"):
+      ### ITN Distributions ###
+      itn.add_itn_scheduled(camp, 
+                            start_day = 165, 
+                            demographic_coverage = 0.9, 
+                            repetitions = 4, 
+                            timesteps_between_repetitions = 365*3, 
+                            receiving_itn_broadcast_event= "Received_ITN", 
+                            # ITN parameters from malaria-bf-hbhi/simulation/setup_inputs/set_up_planned_scenarios.py
+                            killing_initial_effect = 0.7,
+                            killing_box_duration = 180,
+                            killing_decay_time_constant = 90)
+                            
+      ### Case Management ###
+      # Treatment-Seeking Rates by age #
+      cm_coverage_by_age = [{'trigger': 'NewClinicalCase',      ## For uncomplicated symptomatic cases < 5
+                                        'coverage': cm_cov_u5,
+                                        'agemin': 0,
+                                        'agemax': 5,
+                                        'seek': 1,
+                                        'rate': 0.3},
+                            {'trigger': 'NewClinicalCase',      ## For uncomplicated symptomatic cases 5-15
+                                        'coverage': cm_cov_u5*0.6,
+                                        'agemin': 5,
+                                        'agemax': 15,
+                                        'seek': 1,
+                                        'rate': 0.3},
+                            {'trigger': 'NewClinicalCase',      ## For uncomplicated symptomatic cases 15+
+                                        'coverage': cm_cov_u5*0.4,
+                                        'agemin': 15,
+                                        'agemax': 115,
+                                        'seek': 1,
+                                        'rate': 0.3},
+                            {'trigger': 'NewSevereCase',        ## For severe clinical cases, all-ages
+                                        'coverage': 0.8,
+                                        'agemin': 0,
+                                        'agemax': 115,
+                                        'seek': 1,
+                                        'rate': 0.5}]
+      # Treatment #                                 
+      cm.add_treatment_seeking(camp, 
+                               start_day = 1, 
+                               drug=['Artemether','Lumefantrine'],
+                               targets=cm_coverage_by_age,
+                               broadcast_event_name="Received_Treatment")
+                               
+                               
+      ### SMC ###
+      smc_dates = [2394, 2765, 3122, 3489]   # 4 rounds in each cycle, 1 month between rounds. Beginning in July each year 2016-2019
+      # Modeled as a simple MDA
+      dc.add_drug_campaign(camp, campaign_type="MDA", drug_code="SPA", 
+                           start_days=smc_dates,
+                           repetitions=4, 
+                           tsteps_btwn_repetitions=30, 
+                           coverage=0.95,
+                           target_group={'agemin': 0.25, 'agemax': 5},
+                           receiving_drugs_event_name="Received_SMC")
+
        
     return camp
 
 #############################
 # Sweep Campaign Parameters #
 #############################
-def update_campaign_single_parameter(simulation, cm_cov_u5):
+def update_campaign_multiple_parameters(simulation, scale_start_day, habitat_ratio):
     """
         This is a callback function that updates several parameters in the build_campaign function.
         the sweep is achieved by the itertools creating a an array of inputs with all the possible combinations
@@ -378,24 +294,9 @@ def update_campaign_single_parameter(simulation, cm_cov_u5):
     Returns:
         a dictionary of tags for the simulation to use in COMPS
     """
-    build_campaign_partial = partial(build_camp, cm_cov_u5 = cm_cov_u5)
-    return {"cm_cov_u5": cm_cov_u5}
-        
-
-def update_campaign_multiple_parameters(simulation, cm_cov_u5):
-    """
-        This is a callback function that updates several parameters in the build_campaign function.
-        the sweep is achieved by the itertools creating a an array of inputs with all the possible combinations
-        see builder.add_sweep_definition(update_campaign_multiple_parameters function below
-    Args:
-        simulation: simulation object to which we will attach the callback function
-        cm_cov_u5: U5 case management coverage
-    Returns:
-        a dictionary of tags for the simulation to use in COMPS
-    """
-    build_campaign_partial = partial(build_camp, cm_cov_u5 = cm_cov_u5)
-    return {"cm_cov_u5": cm_cov_u5}
-    
+    build_campaign_partial = partial(build_camp, scale_start_day = scale_start_day, habitat_ratio = habitat_ratio)
+    simulation.task.create_campaign_from_callback(build_campaign_partial)
+    return {"scale_start_day":scale_start_day, "HR": habitat_ratio}
 
 
 #################
@@ -406,10 +307,13 @@ def update_serialize_parameters(simulation, df, x: int):
     path = df["serialized_file_path"][x]    
     # Other parameters from burnin that need to be carried over:
     xTLH = df["x_Temporary_Larval_Habitat"][x]
+    HR = df["HR"][x]
     # Set Parameters
     simulation.task.set_parameter("Serialized_Population_Filenames", df["Serialized_Population_Filenames"][x])  # Set serialized population filename
     simulation.task.set_parameter("Serialized_Population_Path", os.path.join(path, "output"))                   # Set serialized population path
     simulation.task.set_parameter("x_Temporary_Larval_Habitat", xTLH)                                           # Grab xTLH from burnin simulation
+    
+    
     
     return {"xTLH":xTLH}      # Return serialized parameters as tags
 
@@ -449,8 +353,8 @@ def build_demog():
     #migration_partial = partial(migration.from_csv, file_name = os.path.join(manifest.input_dir,"migration","local_migration.csv"), id_ref="indie_clusters")
     
     # Using this gravity parameters set from Monique's MMC work 
-    migration_partial = partial(migration.from_demog_and_param_gravity, gravity_params=[7.50395776e-06, 9.65648371e-01, 9.65648371e-01, -1.10305489e+00], id_ref='indie_clusters', migration_type=migration.Migration.REGIONAL)
-    return demog, migration_partial
+    #migration_partial = partial(migration.from_demog_and_param_gravity, gravity_params=[7.50395776e-06, 9.65648371e-01, 9.65648371e-01, -1.10305489e+00], id_ref='indie_clusters', migration_type=migration.Migration.REGIONAL)
+    return demog#, migration_partial
 
 
 #####################
@@ -467,12 +371,23 @@ def general_sim(selected_platform):
     # Set platform and associated values, such as the maximum number of jobs to run at one time
     if(phase=="burnin"):
       # Use b1139 for longer simulations (do not exveed 100 max_running_jobs)
-      platform = Platform(selected_platform, job_directory=manifest.job_directory, partition='b1139', time='6:00:00',
-                            account='b1139', modules=['singularity'], max_running_jobs=100)
+      platform = Platform(selected_platform, 
+                          job_directory=manifest.job_directory, 
+                          partition='b1139', 
+                          time='6:00:00',
+                          account='b1139', 
+                          modules=['singularity'], 
+                          max_running_jobs=100)
     if(phase=="pickup"):
       # Use p30781 for a high # of relatively short simulations
-      platform = Platform(selected_platform, job_directory=manifest.job_directory, partition='short', time='4:00:00',
-                            account='p30781', modules=['singularity'], max_running_jobs=1000)
+      platform = Platform(selected_platform, 
+                          job_directory=manifest.job_directory, 
+                          partition='short', 
+                          time='4:00:00',
+                          account='p30781', 
+                          modules=['singularity'], 
+                          max_running_jobs=1000,
+                          mem = 40000)
 
     # Task #
     ########
@@ -498,32 +413,29 @@ def general_sim(selected_platform):
     ########### 
     # add builder #
     builder = SimulationBuilder()
-    if checkpoint is None:
-        if(phase=="burnin"):
-          ### Parameters to sweep over in burnin ###
-          # Run number
-          builder.add_sweep_definition(partial(set_param, param='Run_Number'), range(num_seeds))
-          # x_Temporary_Larval_Habitat
-          builder.add_sweep_definition(partial(set_param, param='x_Temporary_Larval_Habitat'), np.logspace(min_xTLH, max_xTLH, num_xTLH_samples))
-          
-        if(phase=="pickup"):
-          ### Connect to burnin ###
-          ## Read in serialized data
-          burnin_df = build_burnin_df(burnin_id, platform, burnin_years*365) 
-          ## Pick up parameters
-          # x_Temporary_Larval_Habitat
-          builder.add_sweep_definition(partial(update_serialize_parameters, df=burnin_df), range(len(burnin_df.index)))
-          
-          ### New parameters to sweep over in pickup ###
-          # Run number
-          builder.add_sweep_definition(partial(set_param, param='Run_Number'), range(num_seeds))
-          # Case mangement coverage
-          builder.add_sweep_definition(partial(update_campaign_single_parameter), np.linspace(min_CM, max_CM, num_CM_samples))
-    elif checkpoint is not None:
-          cp = checkpoint
-      #if(phase=="burnin"):
-          #@@@ TO ADD @@@@#
-          print("Checkpoint Used")
+
+    if(phase=="burnin"):
+      ### Parameters to sweep over in burnin ###
+      # Run number
+      builder.add_sweep_definition(partial(set_param, param='Run_Number'), range(num_seeds))
+      builder.add_multiple_parameter_sweep_definition(update_campaign_multiple_parameters, dict(scale_start_day=[1], habitat_ratio=np.linspace(min_HR,max_HR,num_HR_samples)))
+      # x_Temporary_Larval_Habitat
+      builder.add_sweep_definition(partial(set_param, param='x_Temporary_Larval_Habitat'), np.logspace(min_xTLH, max_xTLH, num_xTLH_samples))
+      #builder.add_sweep_definition(partial(update_campaign_single_parameter), np.linspace(min_HR,max_HR,num_HR_samples))
+    if(phase=="pickup"):
+      ### Connect to burnin ###
+      ## Read in serialized data
+      burnin_df = build_burnin_df(burnin_id, platform, burnin_years*365) 
+      ## Pick up parameters
+      # x_Temporary_Larval_Habitat
+      builder.add_sweep_definition(partial(update_serialize_parameters, df=burnin_df), range(len(burnin_df.index)))
+      
+      ### New parameters to sweep over in pickup ###
+      # Run number
+      builder.add_sweep_definition(partial(set_param, param='Run_Number'), range(num_seeds))
+      # Case mangement coverage
+      #builder.add_sweep_definition(partial(update_campaign_single_parameter), np.linspace(min_CM, max_CM, num_CM_samples))
+   
     
     # Reporting #
     #############

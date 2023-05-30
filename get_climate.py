@@ -36,15 +36,17 @@ def get_climate(tag = "default",label="unedited", start_year="2015", start_day="
         
         if rain_shift is not None or fix_temp is not None:
             df, wa = weather_to_csv(weather_dir = dir1, csv_file=csv_file)
-        
+            specs = ""
             if rain_shift is not None:
                 # Shift weather (rain) left rain_shift days
                 max_step = df['steps'].max()
+                specs = "_".join((specs,rain_shift,'shift'))
                 df['steps']= df['steps'] - rain_shift
                 df.loc[(df['steps']<=0),"steps"] = df.loc[(df['steps']<=0),"steps"] + max_step
             if fix_temp is not None:
-                df['airtemp'] = float(fix_temp)
-                df['landtemp'] = float(fix_temp)
+                specs = "_".join((specs,str(fix_temp),'degrees'))
+                df = df.assign(airtemp = float(fix_temp)) 
+                df = df.assign(landtemp = float(fix_temp))
             
             df.to_csv(csv_file)
             weather_columns = {WeatherVariable.AIR_TEMPERATURE: "airtemp",
@@ -57,13 +59,12 @@ def get_climate(tag = "default",label="unedited", start_year="2015", start_day="
                                  WeatherVariable.RAINFALL: "dtk_15arcmin_rainfall_daily_revised.bin"}
             
             ws2 = csv_to_weather(csv_data=df, attributes=wa, weather_dir=dir1, weather_columns=weather_columns, weather_file_names = weather_filenames)
-            specs = "_".join((fix_temp,"degrees",rain_shift, "shift"))
             dir2 = os.path.join(dir1,specs)
             ws2.to_files(dir_path=dir2)
             
-            print(f"Revised ({fix_temp} degrees, -{rain_shift} day rain-shift) files are downloaded in: {dir2}")  # same as out_dir
+            print(f"Revised files are downloaded in: {dir2}")  # same as out_dir
 
 if __name__ == "__main__":
-    get_climate(tag="indie_clusters", label="test", start_year="2011", end_year = "2020", demo_fname="clusters.csv", rain_shift=None, fix_temp=30)
-    get_climate(tag="indie_clusters", label="test", start_year="2018", end_year = "2020", demo_fname="clusters.csv", rain_shift=None, fix_temp=30)
+    #get_climate(tag="indie_clusters", label="testing", start_year="2011", end_year = "2020", demo_fname="clusters.csv", rain_shift=None, fix_temp=30.0)
+    get_climate(tag="indie_clusters", label="testing", start_year="2018", end_year = "2020", demo_fname="clusters.csv", rain_shift=None, fix_temp=30.0)
     #get_climate(tag="FE_example", start_year="2019", end_year="2019", demo_fname="FE_example_nodes.csv")

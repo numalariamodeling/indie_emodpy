@@ -19,7 +19,7 @@ pal20 <- c('#e6194b', '#3cb44b', '#ffe119', '#4363d8', '#f58231', '#911eb4', '#4
 ```{r}
 ### Update with post-analysis experiment ID
 
-exp_id = '67187c60-f3e5-4fa9-92a7-11afdc357330'
+exp_id = 'e4dec631-7f16-4b43-9cab-f0b4b6276cb7'
 out_root = paste("simulation_output",exp_id, sep='/')
 spatial_filename = 'SpatialReportMalariaFiltered.csv'
 event_filename = 'CountedEvents.csv'
@@ -35,8 +35,24 @@ checkpoint_fname = paste(out_root,"checkpoint.csv",sep='/')
 ```
 
 ```{r}
+
+ER %>% rename(time = Time, node = Node) -> ER
+
+inner_join(ER,SR_ranked) -> df
+# Get Averages
+df[, list(treated=mean(Received_Treatment), smc=mean(Received_SMC), nets=mean(Received_ITN), 
+          PCR_Parasite_Prevalence=mean(PCR_Parasite_Prevalence),
+          New_Clinical_Cases = mean(New_Clinical_Cases),
+          Rainfall=mean(Rainfall),
+          Population = mean(Population),
+          Bites=mean(Daily_Bites_Per_Human)), 
+   keyby=c("node","time","xTLH","cm_cov_u5")] -> SR
+
+```
+
+```{r}
+
 SR %>%
-  select(-Run_Number, -experiment) %>%
   filter(time %in% ref$time) %>%
   group_by(time, node, xTLH, cm_cov_u5) %>%
   summarize_all(mean) %>%
@@ -98,15 +114,62 @@ SR_ranked %>%
   guides(fill=guide_colorbar(title.position = "top",
                              title.hjust=0.5,
                              barwidth = unit(10,"cm")))
-
+ggsave(paste(out_root,paste("Parameter Ranking (weighted).png",sep = '_'),sep="/"))
 ```
 
 
 ```{r}
 
 ### Ranked Parameter Sets vs. Calibration Data
-run_size <- length(unique(SR$Run_Number))
-for(rl in seq(5,25,5))
+run_size <- length(unique(ER$Run_Number))
+
+rank_limit <- 20
+
+SR %>%
+  left_join(SR_ranked) %>%
+  filter(rank <=rank_limit) %>%
+  mutate(month = trunc(time/30)) %>%
+  group_by(rank, node, month) %>%
+  summarize(month_incidence = sum(treated)/mean(Population)) -> SR_incidence
+    
+  
+
+SR %>%
+  left_join(SR_ranked) %>%
+  filter(rank <=rank_limit) %>%
+  group_by(rank, node) %>%
+  ggplot(aes(x=as.Date(time, origin="2011-01-01"))) +
+  facet_wrap(~node) +
+  geom_path(aes(y=PCR_Parasite_Prevalence, linetype = "PCR Prevalence", group=rank)) +
+  geom_point(aes(y=ifelse(smc==0,NA,1), color="SMC")) +
+  geom_point(aes(y=ifelse(nets==0,NA,1), color="ITN")) +
+  geom_path(data=SR_incidence, aes(x=as.Date(month*30,origin="2011-01-01"), y=month_incidence, group=rank, linetype="Monthly Incidence")) 
+
+
+
+SR %>%
+  left_join(SR_ranked) %>%
+  filter(weighted_rank <=rank_limit) %>%
+  mutate(month = trunc(time/30)) %>%
+  group_by(weighted_rank, node, month) %>%
+  summarize(month_incidence = sum(treated)/mean(Population)) -> SR_incidence
+
+SR %>%
+  left_join(SR_ranked) %>%
+  filter(weighted_rank <=rank_limit) %>%
+  group_by(weighted_rank, node) %>%
+  ggplot(aes(x=as.Date(time, origin="2011-01-01"))) +
+  facet_wrap(~node) +
+  geom_path(aes(y=PCR_Parasite_Prevalence, linetype = "PCR Prevalence", group=weighted_rank)) +
+  geom_point(aes(y=ifelse(smc==0,NA,1), color="SMC")) +
+  geom_point(aes(y=ifelse(nets==0,NA,1), color="ITN")) +
+  geom_path(data=SR_incidence, aes(x=as.Date(month*30, origin="2011-01-01"), y=month_incidence, group=weighted_rank, linetype="Monthly Incidence"))
+
+```
+
+```{r}
+
+for(rl in c(2,5,10,20,30))
 {
   rank_limit <- rl
   SR %>% 
@@ -118,7 +181,7 @@ for(rl in seq(5,25,5))
               PCR_Parasite_Prevalence=mean(PCR_Parasite_Prevalence)) %>%
     ggplot(aes(x=as.Date(time, origin="2011-01-01"),
                y=PCR_Parasite_Prevalence)) +
-    geom_point(data=ref, aes(x=as.Date(time, origin="2011-01-01"), y=pcr_prevalence, size=n), color="black",fill="white",shape=21, group=NA) +
+    geom_point(data=ref, aes(x=as.Date(time, origin="2011-01-01"), y=pcr_prevalence), color="black",fill="white",shape=21, group=NA) +
     facet_wrap(~paste("Cluster",node), ncol=2) +
     geom_ribbon(aes(ymin=PCR_Parasite_Prevalence-CI, ymax=PCR_Parasite_Prevalence+CI), fill="blue", alpha=0.25) +
     geom_path(color="blue") +
@@ -130,10 +193,32 @@ for(rl in seq(5,25,5))
     theme(legend.position=c(0.15,0.05), 
           legend.direction = "horizontal") -> p
   print(p)
+  ggsave(paste(out_root,paste("Top",rank_limit,"ranked parameter sets.png",sep = '_'),sep="/"))
+
+  SR %>% 
+    left_join(SR_ranked, by=c("node","xTLH","cm_cov_u5")) %>%
+    filter(time >= max(time)-3*365) %>%
+    filter(weighted_rank<=rank_limit)  %>%
+    group_by(node,time) %>%
+    summarize(CI = 1.96*sd(PCR_Parasite_Prevalence)/sqrt(rank_limit*run_size),
+              PCR_Parasite_Prevalence=mean(PCR_Parasite_Prevalence)) %>%
+    ggplot(aes(x=as.Date(time, origin="2011-01-01"),
+               y=PCR_Parasite_Prevalence)) +
+    geom_point(data=ref, aes(x=as.Date(time, origin="2011-01-01"), y=pcr_prevalence, size=n), color="black",fill="white",shape=21, group=NA) +
+    facet_wrap(~paste("Cluster",node), ncol=2) +
+    geom_ribbon(aes(ymin=PCR_Parasite_Prevalence-CI, ymax=PCR_Parasite_Prevalence+CI), fill="blue", alpha=0.25) +
+    geom_path(color="blue") +
+    xlab("") +
+    scale_y_continuous(limits = c(0,NA)) +
+    ggtitle(paste("Top",rank_limit,"ranked parameter sets (weighted)"), paste(run_size,"runs each")) +
+    theme_minimal() +
+    labs(size=NULL) +
+    theme(legend.position=c(0.15,0.05), 
+          legend.direction = "horizontal") -> q
+  print(q)
+  ggsave(paste(out_root,paste("Top",rank_limit,"ranked parameter sets (weighted).png",sep = '_'),sep="/"))
+
 }
-
-ggsave(paste(out_root,paste("Top",rank_limit,"ranked parameter sets.png",sep = '_'),sep="/"))
-
 
 # Stacked Plots
 
@@ -156,22 +241,34 @@ SR_ranked %>%
 
 ```{r}
 SR_ranked %>%
-  filter(rank==1) %>%
+  filter(rank<=5) %>%
   left_join(SR, by=c("node","xTLH","cm_cov_u5")) %>%
-  select(time, New_Clinical_Cases) %>%
+  select(time, rank, New_Clinical_Cases, Run_Number) %>%
   mutate(time=time-min(time)) %>%
   filter(time<365) %>%
   mutate(date=as.Date(time, origin="2018-01-01")) %>%
   mutate(month_year=format.Date(date, format="%Y-%m-01")) %>%
-  group_by(month_year) %>%
-  summarize(cases=sum(New_Clinical_Cases)) %>%
-  ggplot(aes(as.Date(month_year), y=cases)) +
+  group_by(rank,month_year,Run_Number) %>%
+  summarize(cases = sum(New_Clinical_Cases)) %>%
+  ggplot(aes(as.Date(month_year), y=cases, color=rank)) +
   geom_point(size=3) +
-  geom_line(size=1) +
+  geom_line(size=1, aes(group=interaction(Run_Number,rank))) +
   theme_minimal() +
   xlab("") + ylab("") +
   scale_x_date(date_breaks = "2 months", date_minor_breaks = "1 month", 
-               date_labels = "%b %y")
+               date_labels = "%b %y") +
+  facet_wrap(~rank)
+
+head(SR_ranked)
+  
+SR %>% 
+  select(time,Rainfall) %>%
+  filter(time %in% seq(min(time),min(time)+365,1)) %>%
+  group_by(time) %>%
+  summarize_all(mean) %>%
+  ggplot(aes(x=as.Date(time,origin="2011-01-01"), y=Rainfall)) +
+  #ggplot(aes(x=as.Date(time,origin="2011-01-01"), y=Rainfall)) +
+  geom_path()
 
 
   

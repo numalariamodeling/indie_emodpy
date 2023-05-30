@@ -138,7 +138,10 @@ if __name__ == "__main__":
     
     expts = {#'checkpoint_test': '3e48d65c-391d-4916-89d4-a8bc774a78e1',
              #'habitat_test': '30665704-96a9-4245-b450-7d7994a73874',
-             'rainfall_shift': '67187c60-f3e5-4fa9-92a7-11afdc357330'}
+             #'rainfall_shift': '67187c60-f3e5-4fa9-92a7-11afdc357330',
+             #'30degree_3x': '3bc9a766-555e-4319-9681-824911b17cad',
+             #'30degree_10x': 'f5ddee15-217d-4c9d-8920-196f3c890baa',
+             '30degree_50x': 'e8ac22a6-d7fb-49a0-9b3a-de69edb3cfe1'}
              
     clusters = ["1","2","3","4","5","6"]
     jdir =  '/projects/b1139/indie_emodpy/experiments'
